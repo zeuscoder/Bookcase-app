@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.zeus.bookcase.app.home.widget.SlideShowView
+                android:id="@+id/slideshowView"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_centerHorizontal="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:showDividers="middle"
+                android:divider="@mipmap/home__fragment_main_divider"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/book_loading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#EB6460"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/home__fragment_main_activity_newest"/>
+                <ImageView
+                    android:id="@+id/book_show"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#F4B63E"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/home__fragment_main_activity_hottest"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/centerimagview"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@mipmap/home__fragment_main_activity_center" />
+
+            <TextView
+                style="@style/HomeLabel"
+                android:layout_marginTop="20dp"
+                android:text="标签推荐"
+                android:textColor="#999999"
+                />
+
+            <ListView
+                android:id="@+id/label_recommend_book_list"
+                android:focusable="false"
+                android:divider="#ffffff"
+                android:dividerHeight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                style="@style/HomeLabel"
+                android:text="更多有趣的标签>"
+                android:gravity="center"
+                android:textColor="#123456"/>
+
+            <TextView
+                style="@style/HomeLabel"
+                android:layout_marginTop="20dp"
+                android:text="达人推荐"
+                android:textColor="#999999"
+                />
+
+            <com.zeus.common.widget.NonScrollingGridView
+                android:id="@+id/label_recommend_geek_list"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"/>
+
+            <TextView
+                style="@style/HomeLabel"
+                android:text="更多活跃的达人>"
+                android:textColor="#123456"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

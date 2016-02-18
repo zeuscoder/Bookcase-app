@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/book_store"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/saffron">
+        <ImageView
+            android:id="@+id/case_book"
+            android:src="@mipmap/case__layout_book"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/case_book_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="书 库"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/music_store"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/eggplant"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/case_music"
+            android:src="@mipmap/case__layout_music"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/case_music_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="乐 趣"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/film_store"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/sienna">
+        <ImageView
+            android:id="@+id/case_film"
+            android:src="@mipmap/case__layout_video"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/case_film_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="影 室"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"/>
+    </LinearLayout>
+</LinearLayout>

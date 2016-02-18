@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 全屏幕拉伸 -->
+    <style name="home__tab_layout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <!-- 主页按钮布局 -->
+    <style name="home__tab_layout_radio" parent="layout_full">
+        <!--<item name="android:background">@drawable/tab_selector_backgound</item>-->
+        <item name="android:textSize">@dimen/tab_text_size</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@drawable/tab_selector_text_color</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingBottom">@dimen/tab_padding</item>
+    </style>
+
+    <!-- home页面的ToolBar的图标 -->
+    <style name="ImageView.Hamburger" parent="Widget.AppCompat.ActionButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/abc_action_bar_overflow_padding_start_material</item>
+    </style>
+
+    <!-- 固定自身大小 -->
+    <style name="layout_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 我的淘宝按钮布局 -->
+    <style name="layout_btn_account" parent="layout_full">
+        <item name="android:background">@drawable/user__account_btn_select</item>
+        <item name="android:textSize">@dimen/user__text_size_twenty_four</item>
+        <item name="android:padding">@dimen/user__text_account_padding</item>
+        <item name="android:textColor">#666666</item>
+        <!--<item name="android:textColor">#757575</item>-->
+        <!--<item name="android:textColor">#FFFFFF</item>-->
+    </style>
+
+
+</resources>

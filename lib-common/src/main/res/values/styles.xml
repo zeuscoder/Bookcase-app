@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="common__CustomAlertDialogTheme" parent="@android:style/Theme.Dialog">
+
+        <!--
+        NO FRAME
+        -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="common__CompatAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/common__AlertDialogButtonBarButton.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/common__AlertDialogButtonBarButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/common__AlertDialogButtonBarButton</item>
+    </style>
+
+    <style name="common__AlertDialogButtonBarButton" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/common__dialog_button_bar_button_text</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="common__AlertDialogButtonBarButton.Positive">
+        <item name="android:textColor">@color/common__dialog_button_bar_button_text_positive</item>
+    </style>
+
+    <style name="common__TranslucentDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+</resources>

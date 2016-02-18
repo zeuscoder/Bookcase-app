@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:progress="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.quinny898.library.persistentsearch.SearchBox
+        android:layout_width="wrap_content"
+        android:id="@+id/searchbox"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        />
+
+    <com.zeus.common.menu.DropDownMenu
+        android:orientation="horizontal"
+        android:id="@+id/choose_menu"
+        android:layout_width="match_parent"
+        android:background="@color/ripple_material_dark"
+        android:layout_height="60dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:id="@+id/lv_list"
+            android:background="#ffffff"
+            android:layout_height="match_parent"/>
+<!--        <com.zeus.bookcase.app.view.CircularProgressView
+            android:id="@+id/book_search_progress_view"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="0dp"
+            progress:cpv_thickness="4dp"
+            progress:cpv_indeterminate="true"
+            progress:cpv_animAutostart="false"
+            />-->
+        <com.zeus.bookcase.app.home.view.LoadingView
+            android:id="@+id/book_search_progress_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            progress:loadingText="加载中..."/>
+    </RelativeLayout>
+
+</LinearLayout>

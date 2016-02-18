@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444153"
+    android:orientation="vertical">
+
+<!--    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#383547"
+        android:gravity="center"
+        android:text="乐趣"
+        android:textColor="#fff"
+        android:textSize="18sp" />-->
+
+    <include layout="@layout/app__activity_base_topbar"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <com.zeus.bookcase.app.cabinet.view.CardSlidePanel
+            android:id="@+id/image_slide_panel"
+            android:layout_width="fill_parent"
+            card:bottomMarginTop="40dp"
+            card:yOffsetStep="22dp"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/card_bottom_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/card_left_btn"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/case__ignore_button" />
+
+                <Button
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/case__home_button" />
+
+                <Button
+                    android:id="@+id/card_right_btn"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/case__like_button" />
+            </LinearLayout>
+
+            <com.zeus.bookcase.app.cabinet.view.CardItemView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <com.zeus.bookcase.app.cabinet.view.CardItemView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <com.zeus.bookcase.app.cabinet.view.CardItemView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <com.zeus.bookcase.app.cabinet.view.CardItemView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+        </com.zeus.bookcase.app.cabinet.view.CardSlidePanel>
+    </RelativeLayout>
+
+</LinearLayout>

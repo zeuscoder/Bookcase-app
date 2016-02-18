@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--图片自动播放-->
+    <attr name="auto_play" forMymat="boolean" />
+
+    <declare-styleable name="SlidingSwitcherView">
+        <attr name="auto_play" />
+    </declare-styleable>
+
+    <!-- 58LoadingView -->
+    <declare-styleable name="LoadingView">
+        <attr name="loadingText" format="string"/>
+        <attr name="loadingTextAppearance" format="reference"/>
+    </declare-styleable>
+
+    <!-- 购物详情广告栏 -->
+    <declare-styleable name="BannerLayoutStyle">
+        <attr name="selectedIndicatorColor" format="color|reference" />
+        <attr name="unSelectedIndicatorColor" format="color|reference" />
+        <attr name="indicatorShape" format="enum">
+            <enum name="rect" value="0" />
+            <enum name="oval" value="1" />
+        </attr>
+        <attr name="selectedIndicatorHeight" format="dimension|reference" />
+        <attr name="selectedIndicatorWidth" format="dimension|reference" />
+        <attr name="unSelectedIndicatorHeight" format="dimension|reference" />
+        <attr name="unSelectedIndicatorWidth" format="dimension|reference" />
+        <attr name="indicatorPosition" format="enum">
+            <enum name="centerBottom" value="0" />
+            <enum name="rightBottom" value="1" />
+            <enum name="leftBottom" value="2" />
+            <enum name="centerTop" value="3" />
+            <enum name="rightTop" value="4" />
+            <enum name="leftTop" value="5" />
+        </attr>
+        <attr name="indicatorSpace" format="dimension|reference" />
+        <attr name="indicatorMargin" format="dimension|reference" />
+        <attr name="autoPlayDuration" format="integer|reference" />
+        <attr name="scrollDuration" format="integer|reference" />
+        <attr name="isAutoPlay" format="boolean"/>
+    </declare-styleable>
+
+    <!-- 设置截取图片为圆形属性 -->
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_inside_color" format="color" />
+        <attr name="border_outside_color" format="color"></attr>
+    </declare-styleable>
+
+
+    <!-- CardSlideView -->
+    <declare-styleable name="card">
+        <attr name="bottomMarginTop" format="dimension" />
+        <attr name="yOffsetStep" format="dimension" />
+    </declare-styleable>
+
+    <!-- 图书馆滚动Imageview -->
+    <declare-styleable name="BezelImageView">
+        <attr name="maskDrawable" format="reference" />
+        <attr name="borderDrawable" format="reference" />
+        <attr name="desaturateOnPress" format="boolean" />
+    </declare-styleable>
+
+    <!-- 书库Menu -->
+    <declare-styleable name="CoolMenuFrameLayout">
+        <attr name="num" format="enum">
+            <enum name="one" value="1" />
+            <enum name="two" value="2" />
+            <enum name="three" value="3" />
+            <enum name="four" value="4" />
+            <enum name="five" value="5" />
+        </attr>
+        <attr name="titleSize" format="dimension"/>
+        <attr name="titleColor" format="color"/>
+        <attr name="titleIcon" format="reference"/>
+    </declare-styleable>
+
+    <!-- 快递时间线 -->
+    <declare-styleable name="timeline_style" >
+        <attr name="marker" format="color|reference"/>
+        <attr name="line" format="color|reference"/>
+        <attr name="marker_size" format="dimension"/>
+        <attr name="line_size" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="ErrorViewStyle">
+        <attr name="ev_style" format="reference" />
+    </declare-styleable>
+
+    <!-- ErrorView -->
+    <declare-styleable name="ErrorView">
+        <attr name="ev_title" format="string" />
+        <attr name="ev_titleColor" format="color" />
+        <attr name="ev_subtitle" format="string" />
+        <attr name="ev_subtitleColor" format="color" />
+        <attr name="ev_errorImage" format="reference" />
+        <attr name="ev_showTitle" format="boolean" />
+        <attr name="ev_showSubtitle" format="boolean" />
+        <attr name="ev_showRetryButton" format="boolean" />
+        <attr name="ev_retryButtonText" format="string" />
+        <attr name="ev_retryButtonBackground" format="reference" />
+        <attr name="ev_retryButtonTextColor" format="color" />
+        <attr name="ev_subtitleAlignment" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <!-- CheckBox -->
+    <declare-styleable name="AnimCheckBox">
+        <attr name="stroke_width" format="dimension"/>
+        <attr name="stroke_color" format="color"/>
+        <attr name="circle_color" format="color"/>
+    </declare-styleable>
+
+</resources>

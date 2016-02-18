@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background_dark"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:contentInsetStart="0dp"
+                style="@style/Toolbar">
+
+                <ImageView
+                    android:id="@+id/content_hamburger"
+                    style="@style/ImageView.Hamburger"
+                    android:src="@mipmap/home__ic_menu" />
+
+                <com.zeus.bookcase.app.base.widget.CanaroTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="书柜"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/guillotine_item_text_size" />
+
+                <ImageView
+                    android:id="@+id/content_search"
+                    style="@style/ImageView.Hamburger"
+                    android:layout_gravity="right"
+                    android:src="@mipmap/home__ic_search" />
+
+            </android.support.v7.widget.Toolbar>
+
+            <com.quinny898.library.persistentsearch.SearchBox
+                android:layout_width="wrap_content"
+                android:id="@+id/searchbox"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="-6dp"
+                android:layout_marginLeft="-6dp"
+                android:layout_marginRight="-6dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                />
+        </RelativeLayout>
+
+
+        <FrameLayout
+            android:id="@+id/main_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC"
+            />
+
+        <FrameLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/fragment_group"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="bottom"
+                android:background="@color/home__tab_bg2"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+                <RadioButton
+                    android:id="@+id/tab_home"
+                    style="@style/home__tab_layout_radio"
+                    android:checked="true"
+                    android:drawableTop="@drawable/home__tab_home"
+                    android:text="首页" />
+                <RadioButton
+                    android:id="@+id/tab_market"
+                    style="@style/home__tab_layout_radio"
+                    android:drawableTop="@drawable/home__tab_market"
+                    android:text="市场" />
+                <RadioButton
+                    android:id="@+id/tab_case"
+                    style="@style/home__tab_layout_radio"
+                    android:drawableTop="@drawable/home__tab_case"
+                    android:text="书柜" />
+                <RadioButton
+                    android:id="@+id/tab_user"
+                    style="@style/home__tab_layout_radio"
+                    android:drawableTop="@drawable/home__tab_user"
+                    android:text="我的" />
+            </RadioGroup>
+
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

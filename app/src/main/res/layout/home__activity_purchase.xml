@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.zeus.bookcase.app.home.widget.ObservableScrollView
+            android:id="@+id/purchase_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:background="#FFF">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/home___layout_purchase_detail"/>
+                <View
+                    android:id="@+id/anchor"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/parallax_image_height"
+                    android:minHeight="@dimen/parallax_image_height" />
+                <TextView
+                    android:id="@+id/body"
+                    android:layout_marginTop="600dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:text="Lorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit ameet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis lo" />
+            </LinearLayout>
+        </com.zeus.bookcase.app.home.widget.ObservableScrollView>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/top_bar"
+            app:contentInsetStart="0dp"
+            style="@style/Toolbar"
+            android:background="?attr/colorPrimary">
+            <ImageView
+                android:id="@+id/content_hamburger"
+                style="@style/ImageView.Hamburger"
+                android:src="@mipmap/app__top_bar_arrow_back" />
+        </android.support.v7.widget.Toolbar>
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#CCCCCC"
+        />
+
+    <LinearLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:showDividers="middle"
+            android:divider="@mipmap/home__activity_divider"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@mipmap/app_book_purchase_icon1"
+                android:text="客服"
+                android:textColor="#FFFFFF"
+                android:padding="2dp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@mipmap/app_book_purchase_icon2"
+                android:text="店铺"
+                android:textColor="#FFFFFF"
+                android:padding="2dp"
+                />
+            <TextView
+                android:id="@+id/book_add_favorite"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@mipmap/app_book_purchase_icon3"
+                android:text="收藏"
+                android:textColor="#FFFFFF"
+                android:padding="2dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/book_add_shopping_cart"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="加入购物车"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="#FF6600"/>
+        <TextView
+            android:id="@+id/book_purchase"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="立即购买"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:background="#FF3333"/>
+
+    </LinearLayout>
+</LinearLayout>

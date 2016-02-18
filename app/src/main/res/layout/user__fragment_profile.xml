@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:image="http://schemas.android.com/tools"
+    android:background="#F7F4F0"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.zeus.bookcase.app.user.view.InboxBackgroundScrollView
+            android:overScrollMode="always"
+            android:scrollbars="none"
+            android:background="#F7F4F0"
+            android:id="@+id/user_profile_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/user_profile_root"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_background_dark"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:padding="24dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/user_profile_photo"
+                            android:layout_width="88dp"
+                            android:layout_height="88dp"
+                            android:layout_marginRight="16dp"
+                            image:civ_border_width="2dp"
+                            android:src="@mipmap/user__profile_photo"/>
+
+                        <LinearLayout
+                            android:id="@+id/user_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="子谋style"
+                                android:textColor="#ffffff"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="黄金会员"
+                                android:textColor="#bbbbbb"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mobile development passionate."
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/user_setting"
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginRight="24dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/user__btn_following"
+                                android:text="设置"
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/vUserStats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout
+                            android:id="@+id/user_favorites"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5"
+                                android:textColor="#ffffff"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="收藏夹"
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/user_shopping_cart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10"
+                                android:textColor="#ffffff"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="购物车"
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/user_welfare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="25"
+                                android:textColor="#ffffff"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="福利社"
+                                android:textColor="#ffffff"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#999999"/>
+
+                <include layout="@layout/user__layout_order"/>
+
+                <LinearLayout
+                    android:id="@+id/zichan"
+                    android:layout_marginTop="10dp"
+                    style="@style/UserMainItemLayout">
+                    <TextView
+                        style="@style/UserMainItemTextTitle"
+                        android:text="我的资产"
+                        android:drawableLeft="@mipmap/user__ic_group_order_enable"/>
+                    <TextView
+                        style="@style/UserMainItemTextDsrc"
+                        android:text="0" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/jifen"
+                    style="@style/UserMainItemLayout">
+                    <TextView
+                        style="@style/UserMainItemTextTitle"
+                        android:text="我的积分"
+                        android:drawableLeft="@mipmap/user__ic_reserve_order_enable"/>/>
+                    <TextView
+                        style="@style/UserMainItemTextDsrc"
+                        android:text="1000" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/tuijian"
+                    style="@style/UserMainItemLayout">
+                    <TextView
+                        style="@style/UserMainItemTextTitle"
+                        android:text="每日推荐"
+                        android:drawableLeft="@mipmap/user__ic_point"/>/>
+                    <ImageView android:id="@+id/subway_new" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/user__item_new_flag" android:layout_gravity="center_vertical"/>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAlignBottom="@id/subway_new" android:src="@mipmap/user__ic_global_arrow_right_2px" android:layout_gravity="center_vertical" android:layout_marginLeft="4dp" android:layout_marginRight="@dimen/keyline_1"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/member"
+                    style="@style/UserMainItemLayout">
+                    <TextView
+                        style="@style/UserMainItemTextTitle"
+                        android:text="会员俱乐部"
+                        android:drawableLeft="@mipmap/user__ic_point"/>/>
+                    <TextView
+                        style="@style/UserMainItemTextDsrc"
+                        android:text="0" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/choujiang"
+                    style="@style/UserMainItemLayout">
+                    <TextView
+                        style="@style/UserMainItemTextTitle"
+                        android:text="我的抽奖"
+                        android:drawableLeft="@mipmap/user__ic_order_lottery_enable"/>/>
+                    <TextView
+                        style="@style/UserMainItemTextDsrc"
+                        android:text="0" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/diyongquan"
+                    style="@style/UserMainItemLayout">
+                    <TextView
+                        style="@style/UserMainItemTextTitle"
+                        android:text="我的抵用券"
+                        android:drawableLeft="@mipmap/user__ic_order_voucher_enabled"/>/>
+                    <TextView
+                        style="@style/UserMainItemTextDsrc"
+                        android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.zeus.bookcase.app.user.view.InboxBackgroundScrollView>
+        <com.zeus.bookcase.app.user.view.InboxLayoutListView
+            android:id="@+id/inboxlayout"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.zeus.bookcase.app.user.view.InboxLayoutListView>
+    </FrameLayout>
+
+</LinearLayout>

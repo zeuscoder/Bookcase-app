@@ -3,4 +3,79 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--**************************************************HomeFragment*******************************************************-->
+
+    <!--程序主色调 -->
+    <color name="app_background">#444153</color>
+    <color name="app_background_dark">#383547</color>
+    <color name="selected_item_color">#30d1d5</color>
+
+    <!-- topBar按钮颜色 -->
+    <color name="app__layout_bg_press">#AAe1e1e1</color>
+    <color name="app__layout_transparent">#00000000</color>
+
+    <!--标题 程序主色调 -->
+    <color name="app__topbar_text_right">#999999</color>
+
+    <!--程序底部Tab色调 -->
+    <color name="home__tab_bg">#FFFFFF</color>
+    <color name="home__tab_bg2">#444153</color>
+
+    <!-- tab色调 -->
+    <drawable name="select_on">#87CEEB</drawable>
+    <drawable name="select_up">#969696</drawable>
+
+    <!-- 58Loading -->
+    <color name="triangle">#aa72d572</color>
+    <color name="circle">#aa738ffe</color>
+    <color name="rect">#aae84e40</color>
+    <color name="view_bg">#00000000</color>
+    <color name="shadow">#25808080</color>
+    <color name="dialog_bg">#f5f5f5</color>
+
+    <color name="orange">#ffffdc7e</color>
+    <color name="grey">#ffd3d3d3</color>
+    <color name="green">#ff8dd304</color>
+    <color name="blue">#ff82e0ff</color>
+    <color name="yellow">#fffffbae</color>
+    <color name="red">#fff10800</color>
+    <color name="list_item_pressed">#1A000000</color>
+
+    <!--**************************************************MarketFragment*******************************************************-->
+
+
+
+
+
+    <!--**************************************************CaseFragment*******************************************************-->
+
+    <!-- case_fragment的颜色 -->
+    <color name="saffron">#F4B63E</color>
+    <color name="eggplant">#663D4E</color>
+    <color name="sienna">#EB6460</color>
+
+
+
+
+    <!--**************************************************MySelfFragment*******************************************************-->
+    <!-- fragment -->
+    <color name="btn_send_normal">#02c754</color>
+    <color name="btn_send_pressed">#006633</color>
+
+    <!-- account_btn按钮颜色-->
+    <drawable name="layout_bt_on">#EBEBEB</drawable>
+    <drawable name="reg_bt_on">#969696</drawable>
+
+    <!--错误View -->
+    <color name="error_view_text">#656565</color>
+    <color name="error_view_text_dark">#CC000000</color>
+    <color name="error_view_text_light">#858585</color>
+    <color name="error_view_retry_button_background">#30000000</color>
+    <color name="error_view_retry_button_background_stroke">#50000000</color>
+    <color name="apptheme_primary">#3F51B5</color>
+    <color name="apptheme_primary_dark">#303F9F</color>
+    <color name="apptheme_accent">#FF4081</color>
+
+
 </resources>

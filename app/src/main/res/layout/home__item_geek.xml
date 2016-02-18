@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:padding="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/home_geek_photo"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="#00000000"
+        android:src="@mipmap/app_home_geek_photo"/>
+
+    <TextView
+        android:id="@+id/home_geek_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zeus"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#333333"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/home_geek_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="时尚达人"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#999999"
+        android:textSize="14sp"/>
+
+</LinearLayout>

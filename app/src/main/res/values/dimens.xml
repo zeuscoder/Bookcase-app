@@ -4,4 +4,67 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+    <!--**************************************************HomeFragment*******************************************************-->
+
+    <!-- 标题栏标题 -->
+    <dimen name="app__topbar_text_size">20sp</dimen>
+    <dimen name="app__topbar_text_right_size">14sp</dimen>
+
+    <!-- tab字体大小 -->
+    <dimen name="tab_text_size">10sp</dimen>
+    <dimen name="tab_padding">5dip</dimen>
+
+    <!-- Guillotine菜单-->
+    <dimen name="guillotine_small_margin">24dp</dimen>
+    <dimen name="guillotine_medium_margin">48dp</dimen>
+    <dimen name="guillotine_large_margin">100dp</dimen>
+    <dimen name="guillotine_divider_height">40dp</dimen>
+    <dimen name="guillotine_item_text_size">20sp</dimen>
+    <dimen name="guillotine_actionbar_background_view_height">35dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="card_cover_height">100dp</dimen>
+    <dimen name="parallax_image_height">180dp</dimen>
+    <!--**************************************************MarketFragment*******************************************************-->
+
+
+
+
+
+    <!--**************************************************CaseFragment*******************************************************-->
+
+    <!--video-->
+    <dimen name="item_max_height">256dp</dimen>
+    <dimen name="item_normal_height">120dp</dimen>
+
+    <dimen name="item_max_font_size">36sp</dimen>
+    <dimen name="item_normal_font_size">16sp</dimen>
+
+    <fraction name="item_max_mask_alpha">35%</fraction>
+    <fraction name="item_normal_mask_alpha">65%</fraction>
+
+
+
+
+    <!--**************************************************MySelfFragment*******************************************************-->
+    <!-- 字体大小又有 6种 36 32 30   28   24   20 单位是30px 下面已经转为sp -->
+    <dimen name="user__text_size_fourty_four">20sp</dimen>
+    <!-- 44px -->
+    <dimen name="user__text_size_thirty_six">16sp</dimen>
+    <!-- 36px -->
+    <dimen name="user__text_size_thirty_one">14sp</dimen>
+    <!-- 32px -->
+    <dimen name="user__text_size_thirty">13sp</dimen>
+    <!-- 30px -->
+    <dimen name="user__text_size_twenty_eight">12sp</dimen>
+
+    <!-- User Account -->
+    <dimen name="user__text_size_twenty_four">10sp</dimen>
+    <!-- 24px -->
+    <dimen name="user__text_account_padding">5dp</dimen>
+    <!-- 32px -->
+    <dimen name="keyline_1">16dp</dimen>
+
 </resources>

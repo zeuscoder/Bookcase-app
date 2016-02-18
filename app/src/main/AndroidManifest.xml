@@ -2,21 +2,54 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zeus.bookcase.app" >
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
+        android:name=".AppMain"
         android:theme="@style/AppTheme" >
+        <!--    Home Tab Activity 首部    -->
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:name=".home.ui.HomeActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".home.ui.activity.BookSearchActivity"/>
+        <activity android:name=".home.ui.activity.PreferenceWebActivity"/>
+        <activity android:name=".home.ui.activity.BookPurchaseDetailActivity"/>
+        <activity android:name=".home.ui.activity.BookFoldableActivity"/>
+        <activity android:name=".home.ui.activity.BookListActivity"/>
+        <activity android:name=".home.ui.activity.BookOrderConfirmActivity"/>
+        <activity android:name=".home.ui.activity.BookDiscountActivity"/>
+
+        <provider
+            android:authorities="com.zeus.bookcase"
+            android:name=".home.provider.FoldableAssetProvider"
+            android:grantUriPermissions="true"
+            android:exported="true" />
+
+        <!-- Market -->
+
+        <!-- Case -->
+        <activity android:name=".cabinet.ui.activity.MusicCardActivity"/>
+        <activity android:name=".cabinet.ui.activity.FilmRoomActivity"/>
+
+        <!--  User  -->
+        <activity android:name=".user.ui.activity.UserFavoritesActivity"/>
+        <activity android:name=".user.ui.activity.UserShoppingCartActivity"/>
+        <activity android:name=".user.ui.activity.UserWelfareActivity"/>
+        <activity android:name=".user.ui.activity.ExpressTimeLineActivity"/>
+        <activity android:name=".user.ui.activity.BookCollectionTabActivity"/>
+        <activity android:name=".user.ui.activity.LogInActivity"/>
+        <activity android:name=".user.ui.activity.RegisterActivity"/>
     </application>
 
 </manifest>

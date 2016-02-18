@@ -1,4 +1,55 @@
 <resources>
-    <string name="app_name">Bookcase-app</string>
+    <string name="app_name">书柜</string>
     <string name="action_settings">Settings</string>
+    <string name="leftOfTopBar">标题栏左边按钮</string>
+
+    <string name="activity_book_list">分类书单</string>
+    <string name="activity_book_detail">购买</string>
+    <string name="activity_book_recommend">热门活动</string>
+    <string name="activity_order_confirm">确认订单</string>
+    <string name="activity_book_kind_list">科技</string>
+
+    <string name="first_title">Comprehensive</string>
+    <string name="first_desc">We collect the best pieces from around the web and combine them into a story</string>
+    <string name="second_title">Twice a day</string>
+    <string name="second_desc">Top stories delivered yo you twice daily at times you choose</string>
+    <string name="third_title">Definitive</string>
+    <string name="third_desc">We surface the most important need-to-know news</string>
+
+    <!--**************************************************MarketFragment*******************************************************-->
+
+
+
+
+
+    <!--**************************************************CaseFragment*******************************************************-->
+    <!--menu-->
+    <string name="text">Squid blog crucifix Marfa, consectetur vero placeat mixtape. Non seitan sriracha eu, do Banksy fashion axe cred qui vegan delectus consequat Helvetica mollit. XOXO gluten-free disrupt, gastropub officia cliche chillwave hella pop-up. Fixie swag raw denim, YOLO craft beer assumenda occupy veniam photo booth pug consectetur next level Portland tote bag +1. Mlkshk PBR aliquip placeat Wes Anderson.</string>
+    <string name="title">My Description</string>
+    <string name="context_menu">Context menu</string>
+
+    <!--Activity-->
+    <string name="activity_book">书库</string>
+    <string name="activity_music">乐趣</string>
+    <string name="activity_film">影室</string>
+
+
+    <!--**************************************************MySelfFragment*******************************************************-->
+    <string name="user_account_deliver">待发货</string>
+    <string name="user_account_receive">待收货</string>
+    <string name="user_account_comment">待评价</string>
+    <string name="user_account_refund">退款/售后</string>
+    <string name="user_account_pay">代付款</string>
+    <!--ErrorView-->
+    <string name="error_title_damn">Damn</string>
+    <string name="error_subtitle_failed_one_more_time">Failed one more time</string>
+    <string name="info_retrying">Retrying</string>
+    <string name="error_view_oops">Oops</string>
+    <string name="error_view_retry">RETRY</string>
+    <!--Activity-->
+    <string name="activity_shopping_cart">购物车</string>
+    <string name="activity_favorites">收藏夹</string>
+    <string name="activity_welfare">福利社</string>
+    <string name="activity_new_book_come">新书上架</string>
+    <string name="activity_express">物流详情</string>
 </resources>
