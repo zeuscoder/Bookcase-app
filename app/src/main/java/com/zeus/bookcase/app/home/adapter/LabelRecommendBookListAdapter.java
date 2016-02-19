@@ -73,6 +73,18 @@ public class LabelRecommendBookListAdapter extends BaseAdapter {
                 context.startActivity(new Intent(context, BookPurchaseDetailActivity.class));
             }
         });
+        viewHolder.item2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, BookPurchaseDetailActivity.class));
+            }
+        });
+        viewHolder.item3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, BookPurchaseDetailActivity.class));
+            }
+        });
         return view;
     }
 

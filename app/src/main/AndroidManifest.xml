@@ -27,8 +27,10 @@
         <activity android:name=".home.ui.activity.BookPurchaseDetailActivity"/>
         <activity android:name=".home.ui.activity.BookFoldableActivity"/>
         <activity android:name=".home.ui.activity.BookListActivity"/>
-        <activity android:name=".home.ui.activity.BookOrderConfirmActivity"/>
+        <activity android:name=".home.ui.activity.BookOrderConfirmActivity" android:windowSoftInputMode="stateUnspecified|adjustPan"/>
         <activity android:name=".home.ui.activity.BookDiscountActivity"/>
+        <activity android:name=".home.ui.activity.GeekPersonalActivity"/>
+        <activity android:name=".home.ui.activity.BookMagazineActivity"/>
 
         <provider
             android:authorities="com.zeus.bookcase"

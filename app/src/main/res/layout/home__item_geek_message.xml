@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/app_search_book_image"
+        android:layout_width="70dp"
+        android:layout_height="110dp"
+        android:background="#FFFFFF"
+        android:src="@mipmap/pic_screen_ads"
+        android:layout_marginRight="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/app_search_book_title"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:lineSpacingExtra="3dp"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/article"/>
+    </LinearLayout>
+
+</LinearLayout>

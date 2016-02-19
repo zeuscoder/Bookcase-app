@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -17,6 +18,8 @@ import com.zeus.bookcase.app.home.adapter.LabelRecommendGeekListAdapter;
 import com.zeus.bookcase.app.home.model.Geek;
 import com.zeus.bookcase.app.home.ui.activity.BookFoldableActivity;
 import com.zeus.bookcase.app.home.ui.activity.BookListActivity;
+import com.zeus.bookcase.app.home.ui.activity.BookMagazineActivity;
+import com.zeus.bookcase.app.home.ui.activity.GeekPersonalActivity;
 import com.zeus.bookcase.app.home.ui.activity.PreferenceWebActivity;
 import com.zeus.common.widget.NonScrollingGridView;
 
@@ -102,6 +105,12 @@ public class HomeFragment extends Fragment {
         }
         labelRecommendGeekList = (NonScrollingGridView) view.findViewById(R.id.label_recommend_geek_list);
         labelRecommendGeekList.setAdapter(new LabelRecommendGeekListAdapter(getActivity(), geeks));
+        labelRecommendGeekList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                startActivity(new Intent(getActivity(), GeekPersonalActivity.class));
+            }
+        });
     }
 
     private void initBookList(View view) {
@@ -109,6 +118,12 @@ public class HomeFragment extends Fragment {
         labelRecommendBookList.setAdapter(new LabelRecommendBookListAdapter(getActivity()));
         //解决listview在嵌套下只显示一行的问题
         setListViewHeightBasedOnChildren(labelRecommendBookList);
+        labelRecommendBookList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                startActivity(new Intent(getActivity(), BookMagazineActivity.class));
+            }
+        });
     }
 
     public void setListViewHeightBasedOnChildren(ListView listView) {

@@ -17,7 +17,7 @@
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:background="@drawable/app__topbar_layout_tran_bg"
-            android:contentDescription="@string/leftOfTopBar"/>
+            android:contentDescription="@string/left_of_top_Bar"/>
 
 
         <com.zeus.bookcase.app.base.widget.CanaroTextView
