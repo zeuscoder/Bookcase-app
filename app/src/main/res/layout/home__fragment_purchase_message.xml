@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.zeus.bookcase.app.home.widget.ObservableScrollView
+        android:id="@+id/purchase_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="#FFF">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/home___layout_purchase_detail"/>
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:padding="@dimen/activity_vertical_margin"
+                android:textColor="#000"
+                android:text="@string/testText" />
+        </LinearLayout>
+    </com.zeus.bookcase.app.home.widget.ObservableScrollView>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/top_bar"
+        app:contentInsetStart="0dp"
+        style="@style/Toolbar"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/content_hamburger"
+            style="@style/ImageView.Hamburger"
+            android:src="@mipmap/app__top_bar_arrow_back" />
+    </android.support.v7.widget.Toolbar>
+
+</FrameLayout>
+    

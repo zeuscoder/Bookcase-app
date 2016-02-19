@@ -1,58 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:slide="http://schemas.android.com/tools"
     android:orientation="vertical">
-
-    <FrameLayout
+    <com.zeus.bookcase.app.home.widget.SlideDetailsLayout
+        android:id="@+id/slidedetails"
+        slide:default_panel="front"
+        slide:duration="300"
+        slide:percent="0.5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-
-        <com.zeus.bookcase.app.home.widget.ObservableScrollView
-            android:id="@+id/purchase_scroll"
+        <FrameLayout
+            android:id="@+id/book_purchase_message"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true"
-            android:background="#FFF">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <include layout="@layout/home___layout_purchase_detail"/>
-                <View
-                    android:id="@+id/anchor"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/parallax_image_height"
-                    android:minHeight="@dimen/parallax_image_height" />
-                <TextView
-                    android:id="@+id/body"
-                    android:layout_marginTop="600dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/white"
-                    android:paddingBottom="@dimen/activity_vertical_margin"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"
-                    android:paddingTop="@dimen/activity_vertical_margin"
-                    android:text="Lorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit ameet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis lo" />
-            </LinearLayout>
-        </com.zeus.bookcase.app.home.widget.ObservableScrollView>
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/top_bar"
-            app:contentInsetStart="0dp"
-            style="@style/Toolbar"
-            android:background="?attr/colorPrimary">
-            <ImageView
-                android:id="@+id/content_hamburger"
-                style="@style/ImageView.Hamburger"
-                android:src="@mipmap/app__top_bar_arrow_back" />
-        </android.support.v7.widget.Toolbar>
-
-    </FrameLayout>
+            android:layout_height="match_parent"/>
+        <FrameLayout
+            android:id="@+id/book_purchase_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.zeus.bookcase.app.home.widget.SlideDetailsLayout>
 
     <View
         android:layout_width="match_parent"
