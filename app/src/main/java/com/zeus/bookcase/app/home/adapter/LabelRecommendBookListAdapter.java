@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zeus.bookcase.app.R;
+import com.zeus.bookcase.app.home.ui.activity.BookIntroductionActivity;
 import com.zeus.bookcase.app.home.ui.activity.BookPurchaseDetailActivity;
 
 import java.util.List;
@@ -70,19 +71,19 @@ public class LabelRecommendBookListAdapter extends BaseAdapter {
         viewHolder.item1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, BookPurchaseDetailActivity.class));
+                context.startActivity(new Intent(context, BookIntroductionActivity.class));
             }
         });
         viewHolder.item2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, BookPurchaseDetailActivity.class));
+                context.startActivity(new Intent(context, BookIntroductionActivity.class));
             }
         });
         viewHolder.item3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, BookPurchaseDetailActivity.class));
+                context.startActivity(new Intent(context, BookIntroductionActivity.class));
             }
         });
         return view;

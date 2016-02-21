@@ -19,6 +19,7 @@
     <color name="app__topbar_text_right">#999999</color>
 
     <!--程序底部Tab色调 -->
+    <color name="app_color">#FFFFFF</color>
     <color name="home__tab_bg">#FFFFFF</color>
     <color name="home__tab_bg2">#444153</color>
 
@@ -42,6 +43,8 @@
     <color name="red">#fff10800</color>
     <color name="list_item_pressed">#1A000000</color>
 
+
+    <color name="divider_color">#C6C7C9</color>
     <!--**************************************************MarketFragment*******************************************************-->
 
 

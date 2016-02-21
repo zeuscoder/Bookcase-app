@@ -2,16 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:background="#fff"
+    android:descendantFocusability="blocksDescendants"
     android:layout_width="match_parent"
     android:layout_height="130dp"
     android:padding="10dp">
 
     <ImageView
         android:id="@+id/app_search_book_image"
-        android:layout_width="70dp"
+        android:layout_width="80dp"
         android:layout_height="110dp"
         android:background="#FFFFFF"
-        android:src="@mipmap/pic_screen_ads"
+        android:src="@mipmap/home__item_book"
         android:layout_marginRight="15dp"/>
 
     <LinearLayout
@@ -26,11 +27,22 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textColor="#333333"
-            android:maxLines="4"
+            android:maxLines="3"
             android:ellipsize="end"
             android:lineSpacingExtra="3dp"
             android:lineSpacingMultiplier="1.2"
             android:text="@string/article"/>
+        <com.zeus.common.widget.LikeView
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:text="520"
+            android:textColor="#8B8B8B"/>
     </LinearLayout>
+
 
 </LinearLayout>

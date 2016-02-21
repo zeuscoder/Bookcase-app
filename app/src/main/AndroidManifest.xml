@@ -16,6 +16,7 @@
         <!--    Home Tab Activity 首部    -->
         <activity
             android:name=".home.ui.HomeActivity"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +32,8 @@
         <activity android:name=".home.ui.activity.BookDiscountActivity"/>
         <activity android:name=".home.ui.activity.GeekPersonalActivity"/>
         <activity android:name=".home.ui.activity.BookMagazineActivity"/>
+        <activity android:name=".home.ui.activity.BookArticleActivity"/>
+        <activity android:name=".home.ui.activity.BookIntroductionActivity"/>
 
         <provider
             android:authorities="com.zeus.bookcase"

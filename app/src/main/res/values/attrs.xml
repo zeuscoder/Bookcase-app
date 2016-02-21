@@ -54,6 +54,15 @@
         </attr>
     </declare-styleable>
 
+    <!--可扩展TextView-->
+    <declare-styleable name="ExpandableTextView">
+        <attr name="maxCollapsedLines" format="integer"/>
+        <attr name="animDuration" format="integer"/>
+        <attr name="animAlphaStart" format="float"/>
+        <attr name="expandDrawable" format="reference"/>
+        <attr name="collapseDrawable" format="reference"/>
+    </declare-styleable>
+
     <!-- 设置截取图片为圆形属性 -->
     <declare-styleable name="roundedimageview">
         <attr name="border_thickness" format="dimension" />

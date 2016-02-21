@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
+    <!--可扩展TextView-->
+    <item type="id" name="expandable_text"/>
+    <item type="id" name="expand_collapse"/>
     <!--**************************************************MarketFragment*******************************************************-->
 
 
