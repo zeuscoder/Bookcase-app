@@ -21,6 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+                <!-- 用户信息区 -->
                 <LinearLayout
                     android:id="@+id/user_profile_root"
                     android:layout_width="match_parent"
@@ -31,12 +32,10 @@
                     android:orientation="vertical"
                     android:layout_marginBottom="10dp"
                     android:padding="24dp">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clipChildren="false">
-
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/user_profile_photo"
                             android:layout_width="88dp"
@@ -44,37 +43,35 @@
                             android:layout_marginRight="16dp"
                             image:civ_border_width="2dp"
                             android:src="@mipmap/user__profile_photo"/>
-
                         <LinearLayout
                             android:id="@+id/user_detail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical">
-
                             <TextView
+                                android:id="@+id/user_nick_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="子谋style"
                                 android:textColor="#ffffff"
                                 android:textSize="24sp" />
-
                             <TextView
+                                android:id="@+id/user_level"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
                                 android:text="黄金会员"
-                                android:textColor="#bbbbbb"
+                                android:textColor="@color/orange"
                                 android:textSize="12sp" />
-
-                            <TextView
+<!--                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Mobile development passionate."
+                                android:text="一个人的世界很孤单"
                                 android:textColor="#ffffff"
-                                android:textSize="12sp" />
-
+                                android:textSize="12sp" />-->
                             <Button
-                                android:id="@+id/user_setting"
+                                android:id="@+id/user_setting_or_login"
                                 android:layout_width="match_parent"
                                 android:layout_height="24dp"
                                 android:layout_marginRight="24dp"
@@ -83,10 +80,9 @@
                                 android:text="设置"
                                 android:textColor="#ffffff"
                                 android:textSize="12sp" />
-
                         </LinearLayout>
                     </LinearLayout>
-
+                    <!-- 用户收藏夹 -->
                     <LinearLayout
                         android:id="@+id/vUserStats"
                         android:layout_width="match_parent"
@@ -94,7 +90,6 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_marginTop="16dp">
-
                         <LinearLayout
                             android:id="@+id/user_favorites"
                             android:layout_width="wrap_content"
@@ -102,14 +97,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="vertical">
-
                             <TextView
+                                android:id="@+id/user_favorites_number"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="5"
                                 android:textColor="#ffffff"
                                 android:textSize="20sp" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -117,7 +111,6 @@
                                 android:textColor="#ffffff"
                                 android:textSize="12sp" />
                         </LinearLayout>
-
                         <LinearLayout
                             android:id="@+id/user_shopping_cart"
                             android:layout_width="wrap_content"
@@ -125,14 +118,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="vertical">
-
                             <TextView
+                                android:id="@+id/user_shopping_cart_number"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="10"
                                 android:textColor="#ffffff"
                                 android:textSize="20sp" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -140,7 +132,6 @@
                                 android:textColor="#ffffff"
                                 android:textSize="12sp" />
                         </LinearLayout>
-
                         <LinearLayout
                             android:id="@+id/user_welfare"
                             android:layout_width="wrap_content"
@@ -148,14 +139,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="vertical">
-
                             <TextView
+                                android:id="@+id/user_welfare_number"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="25"
                                 android:textColor="#ffffff"
                                 android:textSize="20sp" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -170,11 +160,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:background="#999999"/>
-
                 <include layout="@layout/user__layout_order"/>
-
+                <!-- 其他信息 -->
                 <LinearLayout
-                    android:id="@+id/zichan"
+                    android:id="@+id/fortune"
                     android:layout_marginTop="10dp"
                     style="@style/UserMainItemLayout">
                     <TextView
@@ -183,10 +172,10 @@
                         android:drawableLeft="@mipmap/user__ic_group_order_enable"/>
                     <TextView
                         style="@style/UserMainItemTextDsrc"
-                        android:text="0" />
+                        android:text="" />
                 </LinearLayout>
                 <LinearLayout
-                    android:id="@+id/jifen"
+                    android:id="@+id/points"
                     style="@style/UserMainItemLayout">
                     <TextView
                         style="@style/UserMainItemTextTitle"
@@ -194,18 +183,18 @@
                         android:drawableLeft="@mipmap/user__ic_reserve_order_enable"/>/>
                     <TextView
                         style="@style/UserMainItemTextDsrc"
-                        android:text="1000" />
+                        android:text="" />
                 </LinearLayout>
-                <LinearLayout android:id="@+id/tuijian"
+                <LinearLayout android:id="@+id/recommend"
                     style="@style/UserMainItemLayout">
                     <TextView
                         style="@style/UserMainItemTextTitle"
                         android:text="每日推荐"
-                        android:drawableLeft="@mipmap/user__ic_point"/>/>
+                        android:drawableLeft="@mipmap/user__ic_order_lottery_enable"/>/>
                     <ImageView android:id="@+id/subway_new" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/user__item_new_flag" android:layout_gravity="center_vertical"/>
                     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAlignBottom="@id/subway_new" android:src="@mipmap/user__ic_global_arrow_right_2px" android:layout_gravity="center_vertical" android:layout_marginLeft="4dp" android:layout_marginRight="@dimen/keyline_1"/>
                 </LinearLayout>
-                <LinearLayout android:id="@+id/member"
+<!--                <LinearLayout android:id="@+id/member"
                     style="@style/UserMainItemLayout">
                     <TextView
                         style="@style/UserMainItemTextTitle"
@@ -234,7 +223,7 @@
                     <TextView
                         style="@style/UserMainItemTextDsrc"
                         android:text="0" />
-                </LinearLayout>
+                </LinearLayout>-->
             </LinearLayout>
         </com.zeus.bookcase.app.user.view.InboxBackgroundScrollView>
         <com.zeus.bookcase.app.user.view.InboxLayoutListView

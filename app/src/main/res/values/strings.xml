@@ -9,6 +9,8 @@
     <string name="activity_order_confirm">确认订单</string>
     <string name="activity_book_kind_list">科技</string>
     <string name="activity_geek">达人</string>
+    <string name="activity_geeks">达人推荐</string>
+    <string name="activity_book_introduction">书籍</string>
     <string name="activity_article">介绍文章</string>
 
     <string name="first_title">Comprehensive</string>
@@ -26,8 +28,8 @@
 
     <!--**************************************************CaseFragment*******************************************************-->
     <!--menu-->
-    <string name="text">Squid blog crucifix Marfa, consectetur vero placeat mixtape. Non seitan sriracha eu, do Banksy fashion axe cred qui vegan delectus consequat Helvetica mollit. XOXO gluten-free disrupt, gastropub officia cliche chillwave hella pop-up. Fixie swag raw denim, YOLO craft beer assumenda occupy veniam photo booth pug consectetur next level Portland tote bag +1. Mlkshk PBR aliquip placeat Wes Anderson.</string>
-    <string name="title">My Description</string>
+    <string name="text">\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020我们真的一起去看世界了，足迹遍布40多个国家。\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020即使是带着老的小的一大家子人，我们也会营造属于两个人的特殊时刻。在南太平洋的白沙滩上漫步，在圣彼得堡的涅瓦河边喝着咖啡度过白夜，在意大利阿马尔菲海岸的悬崖上眺望地中海，在印度泰姬陵的水池边欣赏白色宫殿的倒影，在马赛马拉大草原的早晨看薄雾中的象群，在阿尔卑斯雪山下听贝多芬的交响乐，或是在欧洲最西端、葡萄牙里斯本的罗卡角诵读石碑上的诗文“陆止于此，海始于斯”⋯⋯不同的风景点亮我的眼神，我也用这眼神发现熟悉又新鲜的他。\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020钱锺书曾经说过：“如果你爱一个人，那就和她去旅行，如果旅行后你们仍然相爱，那就结婚吧。”旅行最能考验一个人的品性和两个人的配合程度，旅行中的小小冒险也给二人世界带来难忘的记忆。有一次我们去南非旅行，他预订了一个帐篷旅馆，就驻扎在自然保护区的河岸上。\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020夜晚来临，鳄鱼拍打着河水，河马的咆哮就在耳边，大象窸窸窣窣地吃着帐篷外的树叶，与我们只隔着一层帆布。我们关掉灯，屏住呼吸，等待它们踏着沉重的脚步走远⋯⋯第二天清晨我们吃过早饭返回帐篷时，一只大个头的野猪与我们狭路相逢，它晃动着两只獠牙，打量着我们。吴征一把抓住我，把我挡在他的身后，嘱咐我：“不要慌，慢慢后退。”我们给野猪让开一条道，那家伙看我们既无恶意，也不慌张，似乎也定下心来。\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020对峙了一会儿，就大摇大摆地走开了。\n这段遭遇让我们兴奋了好几天。最浪漫的事？那就是周游世界后回到家里，泡一杯热茶，摆一盘瓜子，舒舒服服地一起看碟。金窝银窝，还是自家的小窝好哇。</string>
+    <string name="title">世界很大，幸好有你</string>
     <string name="context_menu">Context menu</string>
 
     <!--Activity-->
@@ -53,7 +55,10 @@
     <string name="activity_favorites">收藏夹</string>
     <string name="activity_welfare">福利社</string>
     <string name="activity_new_book_come">新书上架</string>
-    <string name="activity_express">物流详情</string>rem
+    <string name="activity_express">物流详情</string>
+    <string name="activty_my_fortune">我的资产</string>
+
+
     <string name="testText">ipt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, utpt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis pt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis pt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis pt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis pt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis  duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit ametipt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit ametipt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit ametipt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis lo</string>
     <string name="comment_word">她内心肯定狂喜着，狂喜着自己去年终于找到了自己的阿拉比……。她狂喜着，太好了，我长大。毫无疑问。</string>
     <string name="suibian">       自张居正去世后，便无人，敢管万历，为争国本，查妖术，打闷棍。上自政事，下至友谊，我就随便线说一说，然后在卡将会加快。</string>

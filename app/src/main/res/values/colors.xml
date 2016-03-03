@@ -43,6 +43,12 @@
     <color name="red">#fff10800</color>
     <color name="list_item_pressed">#1A000000</color>
 
+    <!-- introActivity -->
+    <color name="dots_color">#FE2E64</color>
+    <color name="darker_gray">#aaa</color>
+    <color name="dark_yellow">#FE9A2E</color>
+    <color name="button_color">#01DFA5</color>
+    <color name="material_blue_500">#2196F3</color>
 
     <color name="divider_color">#C6C7C9</color>
     <!--**************************************************MarketFragment*******************************************************-->
@@ -52,7 +58,6 @@
 
 
     <!--**************************************************CaseFragment*******************************************************-->
-
     <!-- case_fragment的颜色 -->
     <color name="saffron">#F4B63E</color>
     <color name="eggplant">#663D4E</color>

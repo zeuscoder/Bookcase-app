@@ -63,6 +63,13 @@ public class BookPurchaseMessageFragment extends BaseFragment implements Observa
                 Toast.makeText(getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
             }
         });
+
+        mToolbarView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().finish();
+            }
+        });
     }
 
     @Override

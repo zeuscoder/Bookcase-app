@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:slide="http://schemas.android.com/tools"
     android:orientation="vertical">
-    <com.zeus.bookcase.app.home.widget.SlideDetailsLayout
+<!--    <com.zeus.bookcase.app.home.widget.SlideDetailsLayout
         android:id="@+id/slidedetails"
         slide:default_panel="front"
         slide:duration="300"
@@ -20,7 +20,12 @@
             android:id="@+id/book_purchase_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </com.zeus.bookcase.app.home.widget.SlideDetailsLayout>
+    </com.zeus.bookcase.app.home.widget.SlideDetailsLayout>-->
+    <FrameLayout
+        android:id="@+id/book_purchase_message"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
     <View
         android:layout_width="match_parent"

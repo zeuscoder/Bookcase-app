@@ -22,6 +22,7 @@
         android:divider="@drawable/app__divider_shape"
         >
         <TextView
+            android:id="@+id/book_add_favorite"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -30,6 +31,7 @@
             android:textColor="@color/circle"
             android:text="收藏"/>
         <TextView
+            android:id="@+id/book_purchase"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

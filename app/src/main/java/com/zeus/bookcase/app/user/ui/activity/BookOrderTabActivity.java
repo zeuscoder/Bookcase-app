@@ -21,7 +21,7 @@ import com.zeus.common.tabs.MaterialTabListener;
 /**
  * Created by zeus_coder on 2015/12/2.
  */
-public class BookCollectionTabActivity extends AppCompatActivity implements MaterialTabListener {
+public class BookOrderTabActivity extends AppCompatActivity implements MaterialTabListener {
 
     private ViewPager pager;
     private ViewPagerAdapter pagerAdapter;

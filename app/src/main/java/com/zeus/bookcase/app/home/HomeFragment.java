@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.home.adapter.LabelRecommendBookListAdapter;
@@ -20,26 +21,25 @@ import com.zeus.bookcase.app.home.ui.activity.BookFoldableActivity;
 import com.zeus.bookcase.app.home.ui.activity.BookListActivity;
 import com.zeus.bookcase.app.home.ui.activity.BookMagazineActivity;
 import com.zeus.bookcase.app.home.ui.activity.GeekPersonalActivity;
+import com.zeus.bookcase.app.home.ui.activity.GeekSummaryListActivity;
 import com.zeus.bookcase.app.home.ui.activity.PreferenceWebActivity;
 import com.zeus.common.widget.NonScrollingGridView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 /**
  * 第一个页面
  * Created by zeus_coder on 2016/2/3.
  */
 public class HomeFragment extends Fragment {
-    private ImageView centerimagview;
-    private ImageView loadimageview;
+    private ImageView centerImageView;
+    private ImageView loadImageView;
     private ImageView showImageView;
     private ListView labelRecommendBookList;
     private NonScrollingGridView labelRecommendGeekList;
+
+    private TextView moreGeek;
 
     private List<Geek> geeks = new ArrayList<>();
 
@@ -62,13 +62,13 @@ public class HomeFragment extends Fragment {
         initGeekList(view);
 
 
-        centerimagview.setOnClickListener(new View.OnClickListener() {
+        centerImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), PreferenceWebActivity.class));
             }
         });
-        loadimageview.setOnClickListener(new View.OnClickListener() {
+        loadImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(getActivity(), BookLoadingActivity.class));
@@ -81,12 +81,19 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(), BookListActivity.class));
             }
         });
+        moreGeek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), GeekSummaryListActivity.class));
+            }
+        });
     }
 
     private void initView(View view) {
-        centerimagview = (ImageView) view.findViewById(R.id.centerimagview);
-        loadimageview = (ImageView) view.findViewById(R.id.book_loading);
+        centerImageView = (ImageView) view.findViewById(R.id.centerimagview);
+        loadImageView = (ImageView) view.findViewById(R.id.book_loading);
         showImageView = (ImageView) view.findViewById(R.id.book_show);
+        moreGeek = (TextView) view.findViewById(R.id.more_activity_geek);
     }
 
     private void initGeekList(View view) {

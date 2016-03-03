@@ -1,6 +1,7 @@
 package com.zeus.bookcase.app.home.ui.activity;
 
 import android.os.Bundle;
+import android.util.LruCache;
 
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.base.BaseActivity;
@@ -13,6 +14,7 @@ public class BookMagazineActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home__activity_book_introduction);
+        setContentView(R.layout.user_item_day_recommend);
     }
+
 }

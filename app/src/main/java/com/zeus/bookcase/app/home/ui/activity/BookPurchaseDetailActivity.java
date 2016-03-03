@@ -36,7 +36,7 @@ public class BookPurchaseDetailActivity extends AppCompatActivity implements ISl
     private TextView favorite;
 
     //上拉图文详情
-    private SlideDetailsLayout slideDetailsLayout;
+    //private SlideDetailsLayout slideDetailsLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +46,11 @@ public class BookPurchaseDetailActivity extends AppCompatActivity implements ISl
         //initTopButton(R.string.activity_book_detail, R.mipmap.app__top_bar_arrow_back, 0);
 
         //上拉图文详情
-        slideDetailsLayout = (SlideDetailsLayout) findViewById(R.id.slidedetails);
+//        slideDetailsLayout = (SlideDetailsLayout) findViewById(R.id.slidedetails);
         FragmentManager fm1 = getSupportFragmentManager();
         fm1.beginTransaction().replace(R.id.book_purchase_message, new BookPurchaseMessageFragment()).commit();
-        FragmentManager fm2 = getSupportFragmentManager();
-        fm2.beginTransaction().replace(R.id.book_purchase_detail, new BookPurchaseDetailFragment()).commit();
+//        FragmentManager fm2 = getSupportFragmentManager();
+//        fm2.beginTransaction().replace(R.id.book_purchase_detail, new BookPurchaseDetailFragment()).commit();
 
         purchase = (TextView) findViewById(R.id.book_purchase);
         purchase.setOnClickListener(new View.OnClickListener() {
@@ -80,11 +80,11 @@ public class BookPurchaseDetailActivity extends AppCompatActivity implements ISl
 
     @Override
     public void openDetails(boolean smooth) {
-        slideDetailsLayout.smoothOpen(smooth);
+        //slideDetailsLayout.smoothOpen(smooth);
     }
 
     @Override
     public void closeDetails(boolean smooth) {
-        slideDetailsLayout.smoothClose(smooth);
+        //slideDetailsLayout.smoothClose(smooth);
     }
 }

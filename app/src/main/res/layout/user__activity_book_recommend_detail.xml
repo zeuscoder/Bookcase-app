@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/menu_item_background">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        app:contentInsetStart="0dp"
+        style="@style/Toolbar">
+        <com.zeus.bookcase.app.base.widget.CanaroTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="推荐文章"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/guillotine_item_text_size" />
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/book_recommend_detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

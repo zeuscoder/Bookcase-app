@@ -85,6 +85,7 @@
                 android:stretchMode="columnWidth"/>
 
             <TextView
+                android:id="@+id/more_activity_geek"
                 style="@style/HomeLabel"
                 android:text="更多活跃的达人>"
                 android:textColor="#123456"

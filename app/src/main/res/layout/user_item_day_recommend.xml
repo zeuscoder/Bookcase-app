@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@color/app_color"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/app_search_book_image"
+        android:layout_width="80dp"
+        android:layout_height="110dp"
+        android:background="#FFFFFF"
+        android:src="@mipmap/home__item_book"
+        android:layout_marginRight="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/app_search_book_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:text="Android源码设计模式"/>
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:orientation="horizontal">
+           <TextView
+               android:id="@+id/day_recommend_star"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="14sp"
+               android:textColor="#333"
+               android:text="推荐指数："/>
+           <RatingBar
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignTop="@id/day_recommend_star"
+               android:layout_toRightOf="@id/day_recommend_star"
+               style="?android:attr/ratingBarStyleSmall"
+               android:numStars="5"
+               android:rating="4"/>
+       </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/day_recommend_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#333"
+                android:text="推荐理由："/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#333"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:lineSpacingExtra="3dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="故事十分感人！让人徘徊在伤感与喜剧的边缘，带给你前所唯有的视觉体验"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

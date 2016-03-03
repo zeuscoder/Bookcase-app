@@ -12,12 +12,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zeus.bookcase.app.R;
-import com.zeus.bookcase.app.user.adapter.WelfareAdapter;
+import com.zeus.bookcase.app.user.adapter.DayRecommendAdapter;
 import com.zeus.bookcase.app.user.interfaces.OnDragStateChangeListener;
-import com.zeus.bookcase.app.user.ui.activity.BookCollectionTabActivity;
+import com.zeus.bookcase.app.user.model.User;
+import com.zeus.bookcase.app.user.ui.activity.BookOrderTabActivity;
 import com.zeus.bookcase.app.user.ui.activity.ExpressTimeLineActivity;
 import com.zeus.bookcase.app.user.ui.activity.LogInActivity;
-import com.zeus.bookcase.app.user.ui.activity.UserFavoritesActivity;
+import com.zeus.bookcase.app.user.ui.activity.MyFortuneActivity;
 import com.zeus.bookcase.app.user.ui.activity.UserShoppingCartActivity;
 import com.zeus.bookcase.app.user.ui.activity.UserWelfareActivity;
 import com.zeus.bookcase.app.user.view.InboxBackgroundScrollView;
@@ -26,27 +27,24 @@ import com.zeus.bookcase.app.user.view.InboxLayoutListView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
+import cn.bmob.v3.BmobUser;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by zeus_coder on 2016/2/3.
  */
-public class MySelfFragment extends Fragment {
+public class MySelfFragment extends Fragment implements View.OnClickListener {
 
     @Bind(R.id.inboxlayout) InboxLayoutListView inboxLayoutListView;
     @Bind(R.id.user_profile_scroll_view) InboxBackgroundScrollView inboxBackgroundScrollView;
-    @Bind(R.id.zichan) LinearLayout zichan;
-    @Bind(R.id.jifen) LinearLayout jifen;
-    @Bind(R.id.tuijian) LinearLayout tuijian;
-    @Bind(R.id.member) LinearLayout member;
-    @Bind(R.id.choujiang) LinearLayout choujiang;
-    @Bind(R.id.diyongquan) LinearLayout diyongquan;
-    @Bind(R.id.user_setting) Button setting;
+    @Bind(R.id.fortune) LinearLayout fortune;
+    @Bind(R.id.points) LinearLayout points;
+    @Bind(R.id.recommend) LinearLayout recommend;
+    @Bind(R.id.user_setting_or_login) Button settingOrLogin;
     @Bind(R.id.user_favorites) LinearLayout favorites;
     @Bind(R.id.user_shopping_cart) LinearLayout shoppingCart;
     @Bind(R.id.user_welfare) LinearLayout welfare;
-    @Bind(R.id.user_profile_photo) CircleImageView photo;
+
 
     @Bind(R.id.user_account_all_order) TextView allOrder;
     @Bind(R.id.user_account_pay) Button payOrder;
@@ -54,60 +52,13 @@ public class MySelfFragment extends Fragment {
     @Bind(R.id.user_account_receive) Button receiveOrder;
     @Bind(R.id.user_account_command) Button commandOrder;
 
-    @OnClick(R.id.zichan) void openZiChanList() {
-        inboxLayoutListView.setAdapter(new WelfareAdapter(getActivity()));
-        inboxLayoutListView.openWithAnim(zichan);
-    }
-    @OnClick(R.id.jifen) void openJiFenList() {
-        inboxLayoutListView.setAdapter(new WelfareAdapter(getActivity()));
-        inboxLayoutListView.openWithAnim(jifen);
-    }
-    @OnClick(R.id.tuijian) void openTuiJianList() {
-        inboxLayoutListView.setAdapter(new WelfareAdapter(getActivity()));
-        inboxLayoutListView.openWithAnim(tuijian);
-    }
-    @OnClick(R.id.member) void openMemberList() {
-        inboxLayoutListView.setAdapter(new WelfareAdapter(getActivity()));
-        inboxLayoutListView.openWithAnim(member);
-    }
-    @OnClick(R.id.choujiang) void openChouJiangList() {
-        inboxLayoutListView.setAdapter(new WelfareAdapter(getActivity()));
-        inboxLayoutListView.openWithAnim(choujiang);
-    }
-    @OnClick(R.id.diyongquan) void openDiYongQuanList() {
-        inboxLayoutListView.setAdapter(new WelfareAdapter(getActivity()));
-        inboxLayoutListView.openWithAnim(diyongquan);
-    }
-    @OnClick(R.id.user_favorites) void startUserFavoritesActivity() {
-        startActivity(new Intent(getActivity(), UserFavoritesActivity.class));
-    }
-    @OnClick(R.id.user_shopping_cart) void startUserShoppingCartActivity() {
-        startActivity(new Intent(getActivity(), UserShoppingCartActivity.class));
-    }
-    @OnClick(R.id.user_welfare) void startUserWelfareActivity() {
-        startActivity(new Intent(getActivity(), UserWelfareActivity.class));
-    }
-    @OnClick(R.id.user_setting) void startLogInActivity() {
-        startActivity(new Intent(getActivity(), LogInActivity.class));
-    }
-    @OnClick(R.id.user_profile_photo) void startExpressTimeLineActivity() {
-        startActivity(new Intent(getActivity(), ExpressTimeLineActivity.class));
-    }
-    @OnClick(R.id.user_account_all_order) void startBookAllTabActivity() {
-        startActivity(new Intent(getActivity(), BookCollectionTabActivity.class).putExtra("position",0));
-    }
-    @OnClick(R.id.user_account_pay) void startBookPayTabActivity() {
-        startActivity(new Intent(getActivity(), BookCollectionTabActivity.class).putExtra("position",1));
-    }
-    @OnClick(R.id.user_account_deliver) void startBookDeliverTabActivity() {
-        startActivity(new Intent(getActivity(), BookCollectionTabActivity.class).putExtra("position",2));
-    }
-    @OnClick(R.id.user_account_receive) void startBookReceiveTabActivity() {
-        startActivity(new Intent(getActivity(), BookCollectionTabActivity.class).putExtra("position",3));
-    }
-    @OnClick(R.id.user_account_command) void startBookCommandTabActivity() {
-        startActivity(new Intent(getActivity(), BookCollectionTabActivity.class).putExtra("position",4));
-    }
+    //用户信息
+    @Bind(R.id.user_profile_photo) CircleImageView photo;
+    @Bind(R.id.user_nick_name) TextView nickName;
+    @Bind(R.id.user_level) TextView level;
+    @Bind(R.id.user_favorites_number) TextView favoriteNumber;
+    @Bind(R.id.user_shopping_cart_number) TextView cartNumber;
+    @Bind(R.id.user_welfare_number) TextView welfareNumber;
 
     @Nullable
     @Override
@@ -120,8 +71,35 @@ public class MySelfFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //initUIView(view);
+        User user = BmobUser.getCurrentUser(getActivity(), User.class);
+        initUIView(user);
         initScrollView(view);
+        initData(user);
+    }
+
+    private void initData(User user) {
+        if (user != null) {
+            settingOrLogin.setText("设置");
+        } else {
+            settingOrLogin.setText("登录");
+        }
+    }
+
+    private void initUIView(User user) {
+        if (user != null) {
+            fortune.setOnClickListener(this);
+            recommend.setOnClickListener(this);
+            favorites.setOnClickListener(this);
+            shoppingCart.setOnClickListener(this);
+            welfare.setOnClickListener(this);
+            photo.setOnClickListener(this);
+            allOrder.setOnClickListener(this);
+            payOrder.setOnClickListener(this);
+            deliverOrder.setOnClickListener(this);
+            receiveOrder.setOnClickListener(this);
+            commandOrder.setOnClickListener(this);
+        }
+        settingOrLogin.setOnClickListener(this);
     }
 
     private void initScrollView(View view) {
@@ -142,4 +120,85 @@ public class MySelfFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id) {
+            case R.id.user_favorites:
+                goUserFavoritesActivity();
+                break;
+            case R.id.user_shopping_cart:
+                goUserShoppingCartActivity();
+                break;
+            case R.id.user_welfare:
+                goUserWelfareActivity();
+                break;
+            case R.id.user_profile_photo:
+                goExpressTimeLineActivity();
+                break;
+            case R.id.user_setting_or_login:
+                goLoginActivity();
+                break;
+            case R.id.user_account_all_order:
+                goBookOrderTabActivity(0);
+                break;
+            case R.id.user_account_pay:
+                goBookOrderTabActivity(1);
+                break;
+            case R.id.user_account_deliver:
+                goBookOrderTabActivity(2);
+                break;
+            case R.id.user_account_receive:
+                goBookOrderTabActivity(3);
+                break;
+            case R.id.user_account_command:
+                goBookOrderTabActivity(4);
+                break;
+            case R.id.fortune:
+                goMyFortuneActivity();
+                break;
+            case R.id.recommend:
+                openRecommendList();
+                break;
+        }
+    }
+
+    private void goUserFavoritesActivity() {
+        //startActivity(new Intent(getActivity(), UserFavoritesActivity.class));
+        BmobUser.logOut(getActivity());
+    }
+
+    private void goUserShoppingCartActivity() {
+        startActivity(new Intent(getActivity(), UserShoppingCartActivity.class));
+    }
+
+    private void goUserWelfareActivity() {
+        startActivity(new Intent(getActivity(), UserWelfareActivity.class));
+    }
+
+    private void goExpressTimeLineActivity() {
+        startActivity(new Intent(getActivity(), ExpressTimeLineActivity.class));
+    }
+
+    private void goLoginActivity() {
+        startActivity(new Intent(getActivity(), LogInActivity.class));
+    }
+
+    private void goBookOrderTabActivity(int position) {
+        startActivity(new Intent(getActivity(), BookOrderTabActivity.class).putExtra("position",position));
+    }
+
+    private void goMyFortuneActivity() {
+        startActivity(new Intent(getActivity(), MyFortuneActivity.class));
+    }
+
+    private void openRecommendList() {
+        inboxLayoutListView.setAdapter(new DayRecommendAdapter(getActivity()));
+        inboxLayoutListView.openWithAnim(recommend);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

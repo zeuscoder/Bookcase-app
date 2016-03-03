@@ -2,20 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zeus.bookcase.app" >
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- For Bmob SDK -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/app_icon"
+        android:icon="@mipmap/app_ic_launcher"
         android:label="@string/app_name"
         android:name=".AppMain"
         android:theme="@style/AppTheme" >
         <!--    Home Tab Activity 首部    -->
         <activity
-            android:name=".home.ui.HomeActivity"
+            android:name=".base.WelcomeActivity"
             android:screenOrientation="portrait"
             >
             <intent-filter>
@@ -23,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".base.GuideActivity"/>
+        <activity android:name=".home.ui.HomeActivity" android:screenOrientation="portrait"/>
         <activity android:name=".home.ui.activity.BookSearchActivity"/>
         <activity android:name=".home.ui.activity.PreferenceWebActivity"/>
         <activity android:name=".home.ui.activity.BookPurchaseDetailActivity"/>
@@ -34,6 +39,7 @@
         <activity android:name=".home.ui.activity.BookMagazineActivity"/>
         <activity android:name=".home.ui.activity.BookArticleActivity"/>
         <activity android:name=".home.ui.activity.BookIntroductionActivity"/>
+        <activity android:name=".home.ui.activity.GeekSummaryListActivity"/>
 
         <provider
             android:authorities="com.zeus.bookcase"
@@ -52,9 +58,11 @@
         <activity android:name=".user.ui.activity.UserShoppingCartActivity"/>
         <activity android:name=".user.ui.activity.UserWelfareActivity"/>
         <activity android:name=".user.ui.activity.ExpressTimeLineActivity"/>
-        <activity android:name=".user.ui.activity.BookCollectionTabActivity"/>
+        <activity android:name=".user.ui.activity.BookOrderTabActivity"/>
         <activity android:name=".user.ui.activity.LogInActivity"/>
         <activity android:name=".user.ui.activity.RegisterActivity"/>
+        <activity android:name=".user.ui.activity.MyFortuneActivity"/>
+        <activity android:name=".user.ui.activity.BookRecommendDetailActivity"/>
     </application>
 
 </manifest>
