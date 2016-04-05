@@ -84,6 +84,8 @@
                 android:numColumns="3"
                 android:stretchMode="columnWidth"/>
 
+            <include layout="@layout/app__divider_bottom_gray_line"/>
+
             <TextView
                 android:id="@+id/more_activity_geek"
                 style="@style/HomeLabel"

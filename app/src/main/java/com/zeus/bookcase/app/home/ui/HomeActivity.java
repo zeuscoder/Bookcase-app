@@ -21,7 +21,6 @@ import com.zeus.bookcase.app.base.utils.CommonUtil;
 import com.zeus.bookcase.app.cabinet.CaseFragment;
 import com.zeus.bookcase.app.home.HomeFragment;
 import com.zeus.bookcase.app.home.ui.activity.BookSearchActivity;
-import com.zeus.bookcase.app.market.MarketFragment;
 import com.zeus.bookcase.app.user.MySelfFragment;
 
 import butterknife.Bind;
@@ -39,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     private FragmentTransaction transaction;
     private RadioGroup tabGroup;
     private HomeFragment homeFragment;
-    private MarketFragment marketFragment;
+//    private MarketFragment marketFragment;
     private CaseFragment caseFragment;
     private MySelfFragment mySelfFragment;
 
@@ -119,13 +118,13 @@ public class HomeActivity extends AppCompatActivity {
                     replaceFragment(homeFragment);
                     content_search.setVisibility(View.VISIBLE);
                     break;
-                case R.id.tab_market:
-                    if(null == marketFragment) {
-                        marketFragment = new MarketFragment();
-                    }
-                    replaceFragment(marketFragment);
-                    content_search.setVisibility(View.GONE);
-                    break;
+//                case R.id.tab_market:
+//                    if(null == marketFragment) {
+//                        marketFragment = new MarketFragment();
+//                    }
+//                    replaceFragment(marketFragment);
+//                    content_search.setVisibility(View.GONE);
+//                    break;
                 case R.id.tab_case:
                     if(null == caseFragment) {
                         caseFragment = new CaseFragment();

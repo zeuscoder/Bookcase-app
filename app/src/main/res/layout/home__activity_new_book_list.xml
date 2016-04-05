@@ -5,7 +5,7 @@
     android:background="@color/app_background_dark"
     android:orientation="vertical">
 
-    <include layout="@layout/app__activity_base_topbar"/>
+    <include layout="@layout/app__activity_base_toolbar"/>
 
     <com.yalantis.phoenix.PullToRefreshView
         android:id="@+id/book_pull_to_refresh"

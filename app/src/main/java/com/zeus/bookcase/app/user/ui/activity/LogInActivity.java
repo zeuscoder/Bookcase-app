@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.base.BaseActivity;
+import com.zeus.bookcase.app.base.utils.LogOutState;
+import com.zeus.bookcase.app.base.utils.LoginContext;
+import com.zeus.bookcase.app.base.utils.LoginState;
 import com.zeus.bookcase.app.user.model.User;
 
 import cn.bmob.v3.listener.SaveListener;
@@ -80,6 +83,7 @@ public class LogInActivity extends BaseActivity implements View.OnClickListener{
         user.login(this, new SaveListener() {
             @Override
             public void onSuccess() {
+                LoginContext.getLoginContext().setState(new LoginState());
                 Toast.makeText(LogInActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                 LogInActivity.this.finish();
             }

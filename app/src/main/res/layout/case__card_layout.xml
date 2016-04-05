@@ -15,7 +15,7 @@
         android:textColor="#fff"
         android:textSize="18sp" />-->
 
-    <include layout="@layout/app__activity_base_topbar"/>
+    <include layout="@layout/app__activity_base_toolbar"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"

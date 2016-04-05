@@ -13,7 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.RequestParams;
 import com.quinny898.library.persistentsearch.SearchBox;
 import com.quinny898.library.persistentsearch.SearchResult;
@@ -21,7 +22,7 @@ import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.home.adapter.BookSearchAdapter;
 import com.zeus.bookcase.app.home.api.BaseAsyncHttp;
 import com.zeus.bookcase.app.home.api.HttpResponseHandler;
-import com.zeus.bookcase.app.home.model.Book;
+import com.zeus.bookcase.app.home.model.book.Book;
 import com.zeus.bookcase.app.home.utils.KeyboardUtils;
 import com.zeus.bookcase.app.home.view.LoadingView;
 import com.zeus.common.menu.DropDownMenu;
@@ -258,35 +259,8 @@ public class BookSearchActivity extends Activity {
                 books.clear();
                 progressView.setVisibility(View.GONE);
                 JSONArray jsonbooks = resp.optJSONArray("books");
-                for (int i = 0; i < jsonbooks.length(); i++) {
-                    Book mBook = new Book();
-                    mBook.setId(jsonbooks.optJSONObject(i).optString("id"));
-                    mBook.setRate(jsonbooks.optJSONObject(i).optJSONObject("rating").optDouble("average"));
-                    mBook.setReviewCount(jsonbooks.optJSONObject(i).optJSONObject("rating").optInt("numRaters"));
-                    String authors = "";
-                    for (int j = 0; j < jsonbooks.optJSONObject(i).optJSONArray("author").length(); j++) {
-                        authors = authors + " " + jsonbooks.optJSONObject(i).optJSONArray("author").optString(j);
-                    }
-                    mBook.setAuthor(authors);
-                    String tags = "";
-                    for (int j = 0; j < jsonbooks.optJSONObject(i).optJSONArray("tags").length(); j++) {
-                        tags = tags + " " + jsonbooks.optJSONObject(i).optJSONArray("tags").optJSONObject(j).optString("name");
-                    }
-                    mBook.setTag(tags);
-                    mBook.setAuthorInfo(jsonbooks.optJSONObject(i).optString("author_intro"));
-                    mBook.setBitmap(jsonbooks.optJSONObject(i).optString("image"));
-                    mBook.setId(jsonbooks.optJSONObject(i).optString("id"));
-                    mBook.setTitle(jsonbooks.optJSONObject(i).optString("title"));
-                    mBook.setPublisher(jsonbooks.optJSONObject(i).optString("publisher"));
-                    mBook.setPublishDate(jsonbooks.optJSONObject(i).optString("pubdate"));
-                    mBook.setISBN(jsonbooks.optJSONObject(i).optString("isbn13"));
-                    mBook.setSummary(jsonbooks.optJSONObject(i).optString("summary"));
-                    mBook.setPage(jsonbooks.optJSONObject(i).optString("pages"));
-                    mBook.setPrice(jsonbooks.optJSONObject(i).optString("price"));
-                    mBook.setContent(jsonbooks.optJSONObject(i).optString("catalog"));
-                    mBook.setUrl(jsonbooks.optJSONObject(i).optString("ebook_url"));
-                    books.add(mBook);
-                }
+                Gson gson = new Gson();
+                books = gson.fromJson(String.valueOf(jsonbooks), new TypeToken<List<Book>>(){}.getType());
                 updateToView();
             }
 

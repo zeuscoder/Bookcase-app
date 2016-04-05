@@ -4,7 +4,7 @@
     android:background="#FFF"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/app__activity_base_topbar"/>
+    <include layout="@layout/app__activity_base_toolbar"/>
     <ListView
         android:id="@+id/book_introduction_comment_list"
         android:layout_width="match_parent"

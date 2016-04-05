@@ -34,7 +34,7 @@ public class BookDiscountActivity extends BaseActivity implements AbsListView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home__activity_book_discount);
-        initTopButton(R.string.app_name, R.mipmap.app__top_bar_arrow_back, 0);
+        initTopButton(R.string.activity_discount, R.mipmap.app__top_bar_arrow_back, 0);
 
         mBookGridView = (StaggeredGridView) findViewById(R.id.stagger_grid_view);
 /*        LayoutInflater layoutInflater = getLayoutInflater();
@@ -46,7 +46,7 @@ public class BookDiscountActivity extends BaseActivity implements AbsListView.On
         txtFooterTitle.setText("THE FOOTER!");
         mGridView.addHeaderView(header);
         mGridView.addFooterView(footer);*/
-        mAdapter = new BookDiscountAdapter(this, R.id.txt_line1);
+        mAdapter = new BookDiscountAdapter(this);
 
         // do we have saved data?
         if (savedInstanceState != null) {
@@ -55,10 +55,6 @@ public class BookDiscountActivity extends BaseActivity implements AbsListView.On
 
         if (mData == null) {
             mData = BookDiscountSampleData.generateSampleData();
-        }
-
-        for (String data : mData) {
-            mAdapter.add(data);
         }
 
         mBookGridView.setAdapter(mAdapter);
@@ -106,12 +102,6 @@ public class BookDiscountActivity extends BaseActivity implements AbsListView.On
     }
 
     private void onLoadMoreItems() {
-        final ArrayList<String> sampleData = BookDiscountSampleData.generateSampleData();
-        for (String data : sampleData) {
-            mAdapter.add(data);
-        }
-        // stash all the data in our backing store
-        mData.addAll(sampleData);
         // notify the adapter that we can update now
         mAdapter.notifyDataSetChanged();
         mHasRequestedMore = false;

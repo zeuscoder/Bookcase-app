@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color">
+
+    <include layout="@layout/app__activity_base_toolbar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/app_background_dark"
+        android:padding="16dp"
+        android:text="输入书籍背面的ISBN码:"/>
+
+    <EditText
+        android:id="@+id/isbn_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:background="@null"
+        android:textColor="#333333"
+        android:textSize="20sp"
+        android:hint="输入书籍背面的13位ISBN码"
+        android:textColorHint="#999999"/>
+
+    <Button
+        android:id="@+id/search_isbn"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textColor="#000000"
+        android:layout_margin="20dp"
+        android:background="@drawable/user__btn_exit"
+        android:textSize="20sp"
+        android:text="搜索书籍" />
+
+</LinearLayout>

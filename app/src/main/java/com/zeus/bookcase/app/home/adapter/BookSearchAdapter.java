@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zeus.bookcase.app.R;
-import com.zeus.bookcase.app.home.model.Book;
+import com.zeus.bookcase.app.home.model.book.Book;
 
 
 import java.util.List;
@@ -65,7 +65,7 @@ public class BookSearchAdapter extends BaseAdapter {
         holder.price.setText("41.30");
         //holder.number.setText("("+books.get(position).getReviewCount()+"人评论)");
         holder.number.setText(random.nextInt(2016) + "");
-        ImageLoader.getInstance().displayImage(books.get(position).getBitmap(),holder.image);
+        ImageLoader.getInstance().displayImage(books.get(position).getImage(),holder.image);
         return convertView;
     }
 

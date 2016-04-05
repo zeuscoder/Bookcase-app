@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/Bookcase-app.iml" filepath="$PROJECT_DIR$/Bookcase-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-common/lib-common.iml" filepath="$PROJECT_DIR$/lib-common/lib-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-listview/lib-listview.iml" filepath="$PROJECT_DIR$/lib-listview/lib-listview.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-menu/lib-menu.iml" filepath="$PROJECT_DIR$/lib-menu/lib-menu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-refresh/lib-refresh.iml" filepath="$PROJECT_DIR$/lib-refresh/lib-refresh.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-search/lib-search.iml" filepath="$PROJECT_DIR$/lib-search/lib-search.iml" />
     </modules>
   </component>

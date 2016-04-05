@@ -15,22 +15,22 @@ public class BaseAsyncHttp extends AsyncHttpClient {
 
     public static final String HOST = "https://api.douban.com";
 
-    public static void postReq(String host, String url, RequestParams params, JsonHttpResponseHandler hander) {
-        new AsyncHttpClient().post(host + url, params, hander);
+    public static void postReq(String host, String url, RequestParams params, JsonHttpResponseHandler handler) {
+        new AsyncHttpClient().post(host + url, params, handler);
     }
 
-    public static void postReq(String url, RequestParams params, JsonHttpResponseHandler hander) {
+    public static void postReq(String url, RequestParams params, JsonHttpResponseHandler handler) {
         Log.i("fangjie", HOST + url);
-        new AsyncHttpClient().post(HOST + url, params, hander);
+        new AsyncHttpClient().post(HOST + url, params, handler);
     }
 
-    public static void getReq(String host, String url, RequestParams params, JsonHttpResponseHandler hander) {
-        new AsyncHttpClient().get(host + url, params, hander);
+    public static void getReq(String host, String url, RequestParams params, JsonHttpResponseHandler handler) {
+        new AsyncHttpClient().get(host + url, params, handler);
     }
 
-    public static void getReq(String url, RequestParams params, JsonHttpResponseHandler hander) {
+    public static void getReq(String url, RequestParams params, JsonHttpResponseHandler handler) {
         Log.i("fangjie", HOST + url);
-        new AsyncHttpClient().get(HOST + url, params, hander);
+        new AsyncHttpClient().get(HOST + url, params, handler);
     }
 
 /*    public static void downloadFile(String url,FileDownloadHandler handler){

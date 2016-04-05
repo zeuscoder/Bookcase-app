@@ -10,9 +10,6 @@ import com.zeus.bookcase.app.user.adapter.MyFortuneAdapter;
 import com.zeus.bookcase.app.user.view.ClipViewPager;
 import com.zeus.bookcase.app.user.view.ScalePageTransformer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by zeus_coder on 2016/2/26.
  */
@@ -25,7 +22,7 @@ public class MyFortuneActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user__activity_my_fortune);
-        initTopButton(R.string.activty_my_fortune, R.mipmap.app__top_bar_arrow_back, 0);
+        initTopButton(R.string.activity_my_fortune, R.mipmap.app__top_bar_arrow_back, 0);
 
         mViewPager = (ClipViewPager) findViewById(R.id.viewpager_fortune);
         mViewPager.setPageTransformer(true, new ScalePageTransformer());

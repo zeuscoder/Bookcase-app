@@ -13,8 +13,7 @@ import com.zeus.bookcase.app.R;
 /**
  * Created by zeus_coder on 2016/2/3.
  */
-public class BaseActivity extends Activity {
-
+public  class BaseActivity extends Activity {
 
     //初始化标题栏各组件
     protected ImageView btn_left;
@@ -52,4 +51,5 @@ public class BaseActivity extends Activity {
             });
         }
     }
+
 }

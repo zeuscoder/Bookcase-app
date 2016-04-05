@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/app__activity_base_topbar"/>
+    <include layout="@layout/app__activity_base_toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,6 +39,7 @@
                         android:textColor="#333333"
                         android:textSize="16sp"/>
                     <TextView
+                        android:id="@+id/order_address_name"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -47,6 +48,7 @@
                         android:textColor="#333333"
                         android:textSize="16sp"/>
                     <TextView
+                        android:id="@+id/order_address_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
@@ -66,6 +68,7 @@
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"/>
                     <TextView
+                        android:id="@+id/order_address_address"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -105,10 +108,10 @@
                 android:padding="10dp"
                 android:orientation="horizontal">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/app_ic_launcher"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -133,7 +136,7 @@
                     android:src="@mipmap/user__profile_photo"
                     android:background="#ffffff"
                     android:layout_marginLeft="5dp"
-                    android:layout_width="90dp"
+                    android:layout_width="60dp"
                     android:layout_height="90dp" />
 
                 <LinearLayout
@@ -141,7 +144,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:layout_marginLeft="5dp">
+                    android:layout_marginLeft="10dp">
 
                     <TextView
                         android:id="@+id/order_book_name"
@@ -187,10 +190,10 @@
                             android:text="手机专享价"/>
 
                         <TextView
-                            android:id="@+id/order_book_count"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textColor="#333333"
+                            android:visibility="gone"
                             android:text="X1"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -209,13 +212,28 @@
                     android:textColor="#333333"
                     android:textSize="16sp"
                     android:text="购买数量"/>
-
-                <TextView
+                
+                <ImageView
+                    android:id="@+id/order_book_count_minus"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:src="@mipmap/home__ic_order_number_minus"/>
+
+                <TextView
+                    android:id="@+id/order_book_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:textColor="#333333"
                     android:textSize="16sp"
                     android:text="1"/>
+
+                <ImageView
+                    android:id="@+id/order_book_count_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/home__ic_order_number_plus"/>
             </LinearLayout>
 
             <View
@@ -265,6 +283,7 @@
                     android:text="买家留言："/>
 
                 <EditText
+                    android:id="@+id/order_message"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -272,7 +291,7 @@
                     android:background="@null"
                     android:textColor="#333333"
                     android:textSize="16sp"
-                    android:hint="选填,填写您和卖家达成一致的要求"
+                    android:hint="选填,填写您和卖家一致的要求"
                     android:textColorHint="#999999"/>
             </LinearLayout>
 
@@ -286,6 +305,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#FFFFFF"
+                android:visibility="invisible"
                 android:padding="15dp">
                 <TextView
                     android:layout_width="0dp"
@@ -295,6 +315,7 @@
                     android:layout_marginRight="20dp"
                     android:textColor="#333333"
                     android:textSize="16sp"
+                    android:visibility="invisible"
                     android:text="共1件商品"/>
 
                 <TextView
@@ -306,10 +327,11 @@
                     android:textSize="16sp"/>
 
                 <TextView
+                    android:id="@+id/order_book_all_price"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:text="￥32.80"
+                    android:text="￥10.80"
                     android:textColor="#FF3333"
                     android:textSize="16sp"/>
             </LinearLayout>
@@ -355,16 +377,18 @@
                 android:textSize="16sp"/>
 
             <TextView
+                android:id="@+id/order_book_all_prices"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="￥32.80"
+                android:text="￥10.80"
                 android:textColor="#FF3333"
                 android:textSize="16sp"/>
 
         </LinearLayout>
 
         <TextView
+            android:id="@+id/order_purchase"
             android:layout_width="0dp"
             android:layout_height="55dp"
             android:layout_weight="2"

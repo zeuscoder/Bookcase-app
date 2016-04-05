@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <include layout="@layout/app__activity_base_topbar"/>
+    <include layout="@layout/app__activity_base_toolbar"/>
 
 
     <ScrollView

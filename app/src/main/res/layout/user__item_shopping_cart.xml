@@ -5,51 +5,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#cccccc"/>
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:background="#cccccc"/>-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:background="#ffffff"
-        android:padding="5dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:background="#ffffff"-->
+        <!--android:padding="5dp">-->
 
-        <com.zeus.bookcase.app.user.view.AnimCheckBox
-            xmlns:checkbox="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/user_shopping_cart_check1"
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="5dp"
-            checkbox:stroke_width="3dp"
-            checkbox:stroke_color="#2196F3"
-            checkbox:circle_color="#1976D2"/>
+        <!--<com.zeus.bookcase.app.user.view.AnimCheckBox-->
+            <!--xmlns:checkbox="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/user_shopping_cart_check1"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--checkbox:stroke_width="3dp"-->
+            <!--checkbox:stroke_color="#2196F3"-->
+            <!--checkbox:circle_color="#1976D2"/>-->
 
-        <ImageView
-            android:id="@+id/good_shop_icon"
-            android:background="@mipmap/ic_launcher"
-            android:layout_width="25dp"
-            android:layout_height="25dp" />
+        <!--<ImageView-->
+            <!--android:id="@+id/good_shop_icon"-->
+            <!--android:background="@mipmap/ic_launcher"-->
+            <!--android:layout_width="25dp"-->
+            <!--android:layout_height="25dp" />-->
 
-        <TextView
-            android:id="@+id/good_shop_name"
-            android:text="书柜专营店"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:textSize="14sp"
-            android:textColor="#333333"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/good_shop_name"-->
+            <!--android:text="书柜专营店"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textColor="#333333"-->
+            <!--/>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#cccccc"/>
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:background="#cccccc"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
             android:id="@+id/good_book_image"
             android:src="@mipmap/user__profile_photo"
             android:background="#ffffff"
-            android:layout_width="90dp"
+            android:layout_width="60dp"
             android:layout_height="90dp" />
 
         <LinearLayout
@@ -122,6 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#999999"
+                    android:visibility="invisible"
                     android:text="￥15"/>
 
                 <TextView
@@ -135,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#333333"
-                    android:text="X1"/>
+                    android:text="1"/>
 
             </LinearLayout>
         </LinearLayout>

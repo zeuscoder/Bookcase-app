@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#F7F4F0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:gravity="clip_vertical"
+        android:orientation="horizontal"
+        android:background="#FCFCFC"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/favorite_book_image"
+            android:src="@mipmap/user__profile_photo"
+            android:background="#ffffff"
+            android:layout_width="100dp"
+            android:layout_height="150dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/favorite_book_name"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="小王子"/>
+
+            <TextView
+                android:id="@+id/favorite_book_author"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#999"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="吕子谋"/>
+
+            <TextView
+                android:id="@+id/favorite_book_desc"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#666"
+                android:maxLines="4"
+                android:ellipsize="end"
+                android:text="长度：其他 颜色分类：玫瑰金"/>
+
+            <TextView
+                android:id="@+id/favorite_book_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"
+                android:text="￥10.8"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

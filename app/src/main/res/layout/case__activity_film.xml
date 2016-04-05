@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#88888888">
 
-    <include layout="@layout/app__activity_base_topbar"/>
+    <include layout="@layout/app__activity_base_toolbar"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/video_list"

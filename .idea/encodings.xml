@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/libs/core.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/ui/activity/CaptureActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/camera/AutoFocusCallback.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/camera/CameraConfigurationManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/camera/CameraManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/camera/FlashlightManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/camera/PlanarYUVLuminanceSource.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/camera/PreviewCallback.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/decoding/CaptureActivityHandler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/decoding/DecodeFormatManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/decoding/DecodeHandler.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/decoding/DecodeThread.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/decoding/FinishListener.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/decoding/InactivityTimer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/decoding/Intents.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/view/ViewfinderResultPointCallback.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/zeus/bookcase/app/cabinet/zxing/view/ViewfinderView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/jniLibs" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/card_avatar_bar.9.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/case__activity_capture.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/user__fragment_book_recommend_detail.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/app__arrow_right.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/app__top_bar_arrow_back.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/app_book_purchase_icon1.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/app_book_purchase_icon2.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/app_book_purchase_icon3.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/case__icon_add_book_scan.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/case__icon_add_book_search.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/home__order_icon_author.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/home__order_icon_date.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/home__order_icon_pages.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/home__order_icon_price.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/home__order_icon_printer.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/home__tab_case_on.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/home__tab_case_up.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/home__tab_home_on.png" charset="GBK" />
@@ -32,6 +58,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/user__ic_order_voucher_enabled.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/user__ic_point.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/user__ic_reserve_order_enable.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

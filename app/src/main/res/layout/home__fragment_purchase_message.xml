@@ -14,15 +14,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <include layout="@layout/home___layout_purchase_detail"/>
-            <TextView
-                android:id="@+id/body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:padding="@dimen/activity_vertical_margin"
-                android:textColor="#000"
-                android:text="@string/testText" />
+            <include
+                android:id="@+id/book_detail"
+                layout="@layout/home__layout_purchase_detail"/>
         </LinearLayout>
     </com.zeus.bookcase.app.home.widget.ObservableScrollView>
 

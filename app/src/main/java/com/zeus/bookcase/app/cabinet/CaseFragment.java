@@ -10,8 +10,12 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.zeus.bookcase.app.R;
+import com.zeus.bookcase.app.cabinet.ui.activity.AddBookActivity;
+import com.zeus.bookcase.app.cabinet.ui.activity.BookLibraryActivity;
+import com.zeus.bookcase.app.cabinet.ui.activity.CaptureActivity;
 import com.zeus.bookcase.app.cabinet.ui.activity.FilmRoomActivity;
 import com.zeus.bookcase.app.cabinet.ui.activity.MusicCardActivity;
+import com.zeus.bookcase.app.cabinet.ui.activity.MyBookActivity;
 
 /**
  * Created by zeus_coder on 2016/2/3.
@@ -40,12 +44,16 @@ public class CaseFragment extends Fragment {
                 //startActivity(new Intent(getActivity(), DetailActivity.class));
                 //startActivity(new Intent(getActivity(), BookLibraryActivity.class));
                 //startActivity(new Intent(getActivity(), BookCaseMenuActivity.class));
+//                startActivity(new Intent(getActivity(), BookLibraryActivity.class));
+                startActivity(new Intent(getActivity(), MyBookActivity.class));
             }
         });
         musicStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MusicCardActivity.class));
+//                startActivity(new Intent(getActivity(), MusicCardActivity.class));
+//                startActivityForResult(new Intent(getActivity(), CaptureActivity.class), 100);
+                startActivity(new Intent(getActivity(), AddBookActivity.class));
             }
         });
         filmStore.setOnClickListener(new View.OnClickListener() {
@@ -54,5 +62,10 @@ public class CaseFragment extends Fragment {
                 startActivity(new Intent(getActivity(), FilmRoomActivity.class));
             }
         });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

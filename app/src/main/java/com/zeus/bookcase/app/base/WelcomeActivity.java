@@ -67,7 +67,8 @@ public class WelcomeActivity extends Activity {
     private void initView() {
         // 读取SharedPreferences中需要的数据
         // 使用SharedPreferences来记录程序的使用次数
-        SharedPreferences preferences = getSharedPreferences(
+        //getSharedPreferences获取SharedPreferences实例
+        SharedPreferences preferences = WelcomeActivity.this.getSharedPreferences(
                 SHAREDPREFERENCES_NAME, MODE_PRIVATE);
 
         // 取得相应的值，如果没有该值，说明还未写入，用true作为默认值

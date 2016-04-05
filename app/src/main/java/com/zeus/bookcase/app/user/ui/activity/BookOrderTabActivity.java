@@ -87,7 +87,7 @@ public class BookOrderTabActivity extends AppCompatActivity implements MaterialT
 
         @Override
         public int getCount() {
-            return 5;
+            return 3;
         }
 
         @Override
@@ -95,14 +95,14 @@ public class BookOrderTabActivity extends AppCompatActivity implements MaterialT
             switch (position) {
                 case 0:
                     return "全部";
-                case 1:
+/*                case 1:
                     return "待付款";
                 case 2:
-                    return "待发货";
-                case 3:
+                    return "待发货";*/
+                case 1:
                     return "待收货";
-                case 4:
-                    return "待评价";
+                case 2:
+                    return "已收货";
                 default:
                     return null;
             }

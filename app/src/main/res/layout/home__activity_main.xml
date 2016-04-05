@@ -92,11 +92,11 @@
                     android:checked="true"
                     android:drawableTop="@drawable/home__tab_home"
                     android:text="首页" />
-                <RadioButton
-                    android:id="@+id/tab_market"
-                    style="@style/home__tab_layout_radio"
-                    android:drawableTop="@drawable/home__tab_market"
-                    android:text="市场" />
+                <!--<RadioButton-->
+                    <!--android:id="@+id/tab_market"-->
+                    <!--style="@style/home__tab_layout_radio"-->
+                    <!--android:drawableTop="@drawable/home__tab_market"-->
+                    <!--android:text="市场" />-->
                 <RadioButton
                     android:id="@+id/tab_case"
                     style="@style/home__tab_layout_radio"

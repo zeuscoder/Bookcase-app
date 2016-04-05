@@ -82,11 +82,11 @@ public class FoldableBookAdapter extends RecyclerView.Adapter<FoldableBookAdapte
         holder.mButtonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-/*                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                shareIntent.setType("image/jpg");
-                Uri uri = Uri.parse(path);
-                shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
-                mContext.startActivity(Intent.createChooser(shareIntent, "Share image using"));*/
+//                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+//                shareIntent.setType("image/jpg");
+//                Uri uri = Uri.parse(path);
+//                shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+//                mContext.startActivity(Intent.createChooser(shareIntent, "Share image using"));
                 //mContext.startActivity(new Intent(mContext, BookKindListActivity.class));
                 mContext.startActivity(new Intent(mContext, BookDiscountActivity.class));
             }

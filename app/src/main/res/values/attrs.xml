@@ -84,6 +84,15 @@
         <attr name="desaturateOnPress" format="boolean" />
     </declare-styleable>
 
+    <!-- 书库SlidingDeck -->
+    <declare-styleable name="SlidingDeck">
+        <attr name="maxViewsOnScreen" format="integer|reference" />
+        <attr name="enableOverdrawImprovement" format="boolean|reference" />
+        <attr name="itemsMarginTop" format="dimension|reference" />
+        <attr name="itemsMarginLeftRight" format="dimension|reference" />
+        <attr name="animationDuration" format="integer|reference" />
+    </declare-styleable>
+
     <!-- 书库Menu -->
     <declare-styleable name="CoolMenuFrameLayout">
         <attr name="num" format="enum">

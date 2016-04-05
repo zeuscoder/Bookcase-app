@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color">
+
+    <include layout="@layout/app__activity_base_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:text="收货地址"/>
+
+        <EditText
+            android:id="@+id/user_address_detail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:background="@null"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:hint="必填"
+            android:textColorHint="#999999"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:text="联系电话"/>
+
+        <EditText
+            android:id="@+id/user_address_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:background="@null"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:hint="必填"
+            android:textColorHint="#999999"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:text="收货人姓名"/>
+
+        <EditText
+            android:id="@+id/user_address_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:background="@null"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:hint="必填"
+            android:textColorHint="#999999"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc"/>
+
+    <Button
+        android:id="@+id/user_add_address"
+        style="?android:textAppearanceSmall"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#cccccc"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/user__btn_login"
+        android:textSize="20sp"
+        android:text="新增收货地址" />
+
+</LinearLayout>

@@ -12,6 +12,14 @@
     <string name="activity_geeks">达人推荐</string>
     <string name="activity_book_introduction">书籍</string>
     <string name="activity_article">介绍文章</string>
+    <string name="activity_result">支付结果</string>
+    <string name="activity_discount">优惠信息</string>
+    <string name="activity_scan">扫描书籍</string>
+    <string name="activity_add_book">添加书籍</string>
+    <string name="activity_search">查询书籍</string>
+    <string name="activity_add_book_result">查询结果</string>
+
+
 
     <string name="first_title">Comprehensive</string>
     <string name="first_desc">We collect the best pieces from around the web and combine them into a story</string>
@@ -34,6 +42,7 @@
 
     <!--Activity-->
     <string name="activity_book">书库</string>
+    <string name="activity_charge">交易平台</string>
     <string name="activity_music">乐趣</string>
     <string name="activity_film">影室</string>
 
@@ -56,11 +65,18 @@
     <string name="activity_welfare">福利社</string>
     <string name="activity_new_book_come">新书上架</string>
     <string name="activity_express">物流详情</string>
-    <string name="activty_my_fortune">我的资产</string>
-
+    <string name="activity_my_fortune">我的资产</string>
+    <string name="activity_settings">设置</string>
+    <string name="activity_address">收货地址</string>
+    <string name="activity_add_address">增加收货地址</string>
 
     <string name="testText">ipt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, utpt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis pt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis pt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis pt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis pt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis  duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit ametipt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit ametipt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit ametipt amet, ut duis lo amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis loLorem ipsum dolor sit amet, ut duis lo</string>
     <string name="comment_word">她内心肯定狂喜着，狂喜着自己去年终于找到了自己的阿拉比……。她狂喜着，太好了，我长大。毫无疑问。</string>
     <string name="suibian">       自张居正去世后，便无人，敢管万历，为争国本，查妖术，打闷棍。上自政事，下至友谊，我就随便线说一说，然后在卡将会加快。</string>
+
+    <string name="strInputSql">请输入SQL语句</string>
+    <string name="strErrorSql">执行出错，请检查SQL语句</string>
+    <string name="strSuccessSql">执行SQL语句成功</string>
+    <string name="strUnableSql">Sorry，还没处理select语句</string>
 
 </resources>

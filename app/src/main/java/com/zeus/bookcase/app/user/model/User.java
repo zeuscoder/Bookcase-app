@@ -9,15 +9,20 @@ import cn.bmob.v3.BmobUser;
  */
 public class User extends BmobUser implements Serializable {
 
-    private Boolean sex;
+    private Boolean gender;
     private String nickName;
+    private String image;
+    private String level;
+    private Count count;
 
-    public Boolean getSex() {
-        return sex;
+
+
+    public Boolean getGender() {
+        return gender;
     }
 
-    public void setSex(Boolean sex) {
-        this.sex = sex;
+    public void setGender(Boolean gender) {
+        this.gender = gender;
     }
 
     public String getNickName() {
@@ -27,4 +32,6 @@ public class User extends BmobUser implements Serializable {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
+
 }

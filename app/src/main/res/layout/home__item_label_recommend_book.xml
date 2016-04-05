@@ -5,6 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <ImageView
+            android:id="@+id/layout_recommend_banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_color"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:id="@+id/tv_label_recommend_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文艺的世界"
+            android:textColor="#333333"
+            android:textSize="24sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:id="@+id/tv_label_recommend_list_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/tv_label_recommend_list_title"
+            android:layout_centerHorizontal="true"
+            android:text="200"
+            android:textColor="#666666"
+            android:textSize="13sp"/>
+    </RelativeLayout>
+<!--
     <LinearLayout
         android:id="@+id/layout_recommend_banner"
         android:layout_width="match_parent"
@@ -41,29 +71,30 @@
                 android:textColor="#666666"
                 android:textSize="13sp"/>
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayout>-->
     <LinearLayout
         android:id="@+id/label_recommend_grid_list"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/app_color">
         <ImageView
             android:id="@+id/label_recommend_book_grid_item1"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:scaleType="center"/>
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
         <ImageView
             android:id="@+id/label_recommend_book_grid_item2"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:scaleType="center"/>
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
         <ImageView
             android:id="@+id/label_recommend_book_grid_item3"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:scaleType="center"/>
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
     </LinearLayout>
 </LinearLayout>

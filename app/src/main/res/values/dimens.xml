@@ -75,7 +75,8 @@
     <fraction name="item_normal_mask_alpha">65%</fraction>
 
 
-
+    <integer name="maximumViewsOnScreen">4</integer>
+    <dimen name="activity_horizontal_margin_small">4dp</dimen>
 
     <!--**************************************************MySelfFragment*******************************************************-->
     <!-- 字体大小又有 6种 36 32 30   28   24   20 单位是30px 下面已经转为sp -->

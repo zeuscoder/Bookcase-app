@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-        <include layout="@layout/app__activity_base_topbar"/>
+        <include layout="@layout/app__activity_base_toolbar"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -19,7 +19,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <include layout="@layout/home___layout_purchase_detail"/>
+                <include layout="@layout/home__layout_purchase_detail"/>
 
 <!--                <LinearLayout
                     android:layout_width="match_parent"

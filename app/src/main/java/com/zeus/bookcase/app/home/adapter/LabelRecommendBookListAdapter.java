@@ -1,7 +1,12 @@
 package com.zeus.bookcase.app.home.adapter;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +15,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.imageaware.ImageAware;
 import com.zeus.bookcase.app.R;
+import com.zeus.bookcase.app.home.model.BookList;
 import com.zeus.bookcase.app.home.ui.activity.BookIntroductionActivity;
 import com.zeus.bookcase.app.home.ui.activity.BookPurchaseDetailActivity;
 
@@ -21,11 +29,15 @@ import java.util.List;
  */
 public class LabelRecommendBookListAdapter extends BaseAdapter {
 
-    private List books;
+    private List<BookList> bookLists;
     private Context context;
+    private int id;
 
-    public LabelRecommendBookListAdapter(Context context) {
-        //this.books = list;
+    private BookList bookList;
+    private Intent intent;
+
+    public LabelRecommendBookListAdapter(Context context, List<BookList> bookLists) {
+        this.bookLists = bookLists;
         this.context = context;
     }
 
@@ -51,7 +63,7 @@ public class LabelRecommendBookListAdapter extends BaseAdapter {
         if(convertView == null) {
             view = LayoutInflater.from(context).inflate(R.layout.home__item_label_recommend_book, null);
             viewHolder = new ViewHolder();
-            viewHolder.banner = (LinearLayout) view.findViewById(R.id.layout_recommend_banner);
+            viewHolder.banner = (ImageView) view.findViewById(R.id.layout_recommend_banner);
             viewHolder.title = (TextView) view.findViewById(R.id.tv_label_recommend_list_title);
             viewHolder.number = (TextView) view.findViewById(R.id.tv_label_recommend_list_number);
             viewHolder.item1 = (ImageView) view.findViewById(R.id.label_recommend_book_grid_item1);
@@ -62,35 +74,45 @@ public class LabelRecommendBookListAdapter extends BaseAdapter {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.banner.setBackgroundResource(R.mipmap.app_label_recommend_book_banner_bg);
-        viewHolder.title.setText("IT宅男的周末");
-        viewHolder.number.setText("100");
-        viewHolder.item1.setBackgroundResource(R.mipmap.app_label_recommend_book_item1);
-        viewHolder.item2.setBackgroundResource(R.mipmap.app_label_recommend_book_item2);
-        viewHolder.item3.setBackgroundResource(R.mipmap.app_label_recommend_book_item3);
+        bookList = bookLists.get(position);
+        intent = new Intent(context, BookIntroductionActivity.class);
+        //这里需要传入id
+
+        ImageLoader.getInstance().displayImage(bookList.getUrl(), viewHolder.banner);
+        viewHolder.title.setText(bookList.getTitle());
+        viewHolder.number.setText(bookList.getNumber() + "人看过");
+//        viewHolder.item1.setBackgroundResource(R.mipmap.app_label_recommend_book_item1);
+//        viewHolder.item2.setBackgroundResource(R.mipmap.app_label_recommend_book_item2);
+//        viewHolder.item3.setBackgroundResource(R.mipmap.app_label_recommend_book_item3);
+        ImageLoader.getInstance().displayImage(bookList.getUrls().get(0), viewHolder.item1);
+        ImageLoader.getInstance().displayImage(bookList.getUrls().get(1), viewHolder.item2);
+        ImageLoader.getInstance().displayImage(bookList.getUrls().get(2), viewHolder.item3);
         viewHolder.item1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, BookIntroductionActivity.class));
+                intent.putExtra("bookId", bookList.getIds().get(0));
+                context.startActivity(intent);
             }
         });
         viewHolder.item2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, BookIntroductionActivity.class));
+                intent.putExtra("bookId", bookList.getIds().get(1));
+                context.startActivity(intent);
             }
         });
         viewHolder.item3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, BookIntroductionActivity.class));
+                intent.putExtra("bookId", bookList.getIds().get(2));
+                context.startActivity(intent);
             }
         });
         return view;
     }
 
     class ViewHolder {
-        private LinearLayout banner;
+        private ImageView banner;
         private TextView title;
         private TextView number;
         private ImageView item1;

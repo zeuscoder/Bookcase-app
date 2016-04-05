@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app__activity_base_toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center" >
+
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" />
+
+        <com.zeus.bookcase.app.cabinet.zxing.view.ViewfinderView
+            android:id="@+id/viewfinder_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#00000000" />
+
+        <TextView
+            android:id="@+id/txtResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/red"
+            android:text="请将条码置于取景框内扫描"
+            android:textSize="16sp" />
+
+        <!--</RelativeLayout>-->
+        <!--<RelativeLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@color/white"-->
+        <!-->-->
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:text="骞垮憡浣�"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_height="wrap_content" />-->
+        <!--</RelativeLayout>-->
+    </RelativeLayout>
+
+</LinearLayout>

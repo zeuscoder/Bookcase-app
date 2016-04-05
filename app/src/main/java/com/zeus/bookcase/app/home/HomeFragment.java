@@ -16,10 +16,11 @@ import android.widget.TextView;
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.home.adapter.LabelRecommendBookListAdapter;
 import com.zeus.bookcase.app.home.adapter.LabelRecommendGeekListAdapter;
+import com.zeus.bookcase.app.home.data.MockData;
+import com.zeus.bookcase.app.home.model.BookList;
 import com.zeus.bookcase.app.home.model.Geek;
 import com.zeus.bookcase.app.home.ui.activity.BookFoldableActivity;
 import com.zeus.bookcase.app.home.ui.activity.BookListActivity;
-import com.zeus.bookcase.app.home.ui.activity.BookMagazineActivity;
 import com.zeus.bookcase.app.home.ui.activity.GeekPersonalActivity;
 import com.zeus.bookcase.app.home.ui.activity.GeekSummaryListActivity;
 import com.zeus.bookcase.app.home.ui.activity.PreferenceWebActivity;
@@ -32,7 +33,8 @@ import java.util.List;
  * 第一个页面
  * Created by zeus_coder on 2016/2/3.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener {
+
     private ImageView centerImageView;
     private ImageView loadImageView;
     private ImageView showImageView;
@@ -42,7 +44,7 @@ public class HomeFragment extends Fragment {
     private TextView moreGeek;
 
     private List<Geek> geeks = new ArrayList<>();
-
+    private List<BookList> bookLists = new ArrayList<>();
 
     @Nullable
     @Override
@@ -58,35 +60,9 @@ public class HomeFragment extends Fragment {
         view.setFocusableInTouchMode(true);
         view.requestFocus();
         initView(view);
+        initNetWorkData();
         initBookList(view);
         initGeekList(view);
-
-
-        centerImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), PreferenceWebActivity.class));
-            }
-        });
-        loadImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //startActivity(new Intent(getActivity(), BookLoadingActivity.class));
-                startActivity(new Intent(getActivity(), BookFoldableActivity.class));
-            }
-        });
-        showImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), BookListActivity.class));
-            }
-        });
-        moreGeek.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), GeekSummaryListActivity.class));
-            }
-        });
     }
 
     private void initView(View view) {
@@ -94,22 +70,30 @@ public class HomeFragment extends Fragment {
         loadImageView = (ImageView) view.findViewById(R.id.book_loading);
         showImageView = (ImageView) view.findViewById(R.id.book_show);
         moreGeek = (TextView) view.findViewById(R.id.more_activity_geek);
+        centerImageView.setOnClickListener(this);
+        loadImageView.setOnClickListener(this);
+        showImageView.setOnClickListener(this);
+        moreGeek.setOnClickListener(this);
+    }
+
+    public void initNetWorkData() {
+       bookLists = MockData.getBookLists();
+       geeks = MockData.getGeeks();
+    }
+
+    private void initBookList(View view) {
+        labelRecommendBookList = (ListView) view.findViewById(R.id.label_recommend_book_list);
+        labelRecommendBookList.setAdapter(new LabelRecommendBookListAdapter(getActivity(), bookLists));
+        setListViewHeightBasedOnChildren(labelRecommendBookList);   //解决listview在嵌套下只显示一行的问题
+        labelRecommendBookList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                startActivity(new Intent(getActivity(), BookMagazineActivity.class));
+            }
+        });
     }
 
     private void initGeekList(View view) {
-        int[] photos = { R.mipmap.app_home_geek_photo,
-                R.mipmap.app_home_geek_photo2,
-                R.mipmap.app_home_geek_photo3,
-                R.mipmap.app_home_geek_photo4,
-                R.mipmap.app_home_geek_photo5,
-                R.mipmap.app_home_geek_photo6 };
-        for(int i = 0;i < 6;i++) {
-            Geek geek = new Geek();
-            geek.setName("Zeus" + i);
-            geek.setTitle("帅气达人" + i);
-            geek.setPhoto(photos[i]);
-            geeks.add(geek);
-        }
         labelRecommendGeekList = (NonScrollingGridView) view.findViewById(R.id.label_recommend_geek_list);
         labelRecommendGeekList.setAdapter(new LabelRecommendGeekListAdapter(getActivity(), geeks));
         labelRecommendGeekList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -120,19 +104,42 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void initBookList(View view) {
-        labelRecommendBookList = (ListView) view.findViewById(R.id.label_recommend_book_list);
-        labelRecommendBookList.setAdapter(new LabelRecommendBookListAdapter(getActivity()));
-        //解决listview在嵌套下只显示一行的问题
-        setListViewHeightBasedOnChildren(labelRecommendBookList);
-        labelRecommendBookList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(getActivity(), BookMagazineActivity.class));
-            }
-        });
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id) {
+            case R.id.centerimagview:
+                goWebActivity();
+                break;
+            case R.id.book_loading:
+                goBookFoldableActivity();
+                break;
+            case R.id.book_show:
+                goBookListActivity();
+                break;
+            case R.id.more_activity_geek:
+                goGeekSummaryListActivity();
+                break;
+        }
     }
 
+    private void goGeekSummaryListActivity() {
+        startActivity(new Intent(getActivity(), GeekSummaryListActivity.class));
+    }
+
+    private void goBookListActivity() {
+        startActivity(new Intent(getActivity(), BookListActivity.class));
+    }
+
+    private void goBookFoldableActivity() {
+        startActivity(new Intent(getActivity(), BookFoldableActivity.class));
+    }
+
+    private void goWebActivity() {
+        startActivity(new Intent(getActivity(), PreferenceWebActivity.class));
+    }
+
+    //辅助方法
     public void setListViewHeightBasedOnChildren(ListView listView) {
         ListAdapter listAdapter = listView.getAdapter();
         if(listAdapter == null) {
@@ -153,4 +160,5 @@ public class HomeFragment extends Fragment {
         // params.height最后得到整个ListView完整显示需要的高度
         listView.setLayoutParams(params);
     }
+
 }
