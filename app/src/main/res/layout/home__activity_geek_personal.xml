@@ -7,7 +7,7 @@
     <include
         layout="@layout/app__activity_base_toolbar"/>
     <ListView
-        android:id="@+id/geek_list_message"
+        android:id="@+id/geek_list_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

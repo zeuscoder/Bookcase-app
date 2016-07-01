@@ -34,6 +34,8 @@ public class Transaction extends BmobObject implements Serializable {
 
     private String like;
 
+    private String summary;
+
     public String getBid() {
         return bid;
     }
@@ -128,5 +130,13 @@ public class Transaction extends BmobObject implements Serializable {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }

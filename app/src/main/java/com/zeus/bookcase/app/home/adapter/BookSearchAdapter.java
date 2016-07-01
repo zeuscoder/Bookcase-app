@@ -47,11 +47,13 @@ public class BookSearchAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
+        Book book = books.get(position);
         if(convertView==null) {
             convertView = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.home__item_search_book, null);
             holder=new ViewHolder();
             holder.title=(TextView)convertView.findViewById(R.id.app_search_book_title);
             holder.location=(TextView)convertView.findViewById(R.id.app_search_book_location);
+            holder.date=(TextView)convertView.findViewById(R.id.app_search_book_date);
             holder.price=(TextView)convertView.findViewById(R.id.app_search_book_price);
             holder.number=(TextView)convertView.findViewById(R.id.app_search_book_number);
             convertView.setTag(holder);
@@ -61,8 +63,9 @@ public class BookSearchAdapter extends BaseAdapter {
         Random random = new Random();
         holder.image=(ImageView)convertView.findViewById(R.id.app_search_book_image);
         holder.title.setText(books.get(position).getTitle());
-        holder.location.setText("广州");
-        holder.price.setText("41.30");
+        holder.location.setText(books.get(position).getPublisher());
+        holder.date.setText(books.get(position).getPubdate());
+        holder.price.setText(book.getPrice().toString());
         //holder.number.setText("("+books.get(position).getReviewCount()+"人评论)");
         holder.number.setText(random.nextInt(2016) + "");
         ImageLoader.getInstance().displayImage(books.get(position).getImage(),holder.image);
@@ -74,12 +77,12 @@ public class BookSearchAdapter extends BaseAdapter {
         this.books = books;
     }
 
-
     class ViewHolder{
         ImageView image;
         TextView title;
         TextView location;
         TextView price;
         TextView number;
+        TextView date;
     }
 }

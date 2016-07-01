@@ -11,8 +11,7 @@ import android.widget.Toast;
 
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.base.BaseActivity;
-import com.zeus.bookcase.app.base.utils.LogOutState;
-import com.zeus.bookcase.app.base.utils.LoginContext;
+import com.zeus.bookcase.app.base.utils.LoginCOntext;
 import com.zeus.bookcase.app.base.utils.LoginState;
 import com.zeus.bookcase.app.user.model.User;
 
@@ -66,7 +65,10 @@ public class LogInActivity extends BaseActivity implements View.OnClickListener{
                 goRegisterActivity();
                 break;
             case R.id.user_log_in:
-                login();
+                User user = new User();
+                user.setUsername(email.getText().toString());
+                user.setPassword(password.getText().toString());
+                login(user);
                 break;
         }
     }
@@ -76,14 +78,11 @@ public class LogInActivity extends BaseActivity implements View.OnClickListener{
         LogInActivity.this.finish();
     }
 
-    private void login() {
-        User user = new User();
-        user.setUsername(email.getText().toString());
-        user.setPassword(password.getText().toString());
+    private void login(User user) {
         user.login(this, new SaveListener() {
             @Override
             public void onSuccess() {
-                LoginContext.getLoginContext().setState(new LoginState());
+                LoginCOntext.getLoginContext().setState(new LoginState());
                 Toast.makeText(LogInActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                 LogInActivity.this.finish();
             }
@@ -94,6 +93,5 @@ public class LogInActivity extends BaseActivity implements View.OnClickListener{
             }
         });
     }
-
 
 }

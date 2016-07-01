@@ -15,13 +15,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.imageaware.ImageAware;
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.home.model.BookList;
+import com.zeus.bookcase.app.home.model.book.Book;
 import com.zeus.bookcase.app.home.ui.activity.BookIntroductionActivity;
 import com.zeus.bookcase.app.home.ui.activity.BookPurchaseDetailActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,12 +36,24 @@ public class LabelRecommendBookListAdapter extends BaseAdapter {
     private Context context;
     private int id;
 
+    private ImageLoader imageLoader = ImageLoader.getInstance();
+
     private BookList bookList;
-    private Intent intent;
+    private List<String> ids;
 
     public LabelRecommendBookListAdapter(Context context, List<BookList> bookLists) {
         this.bookLists = bookLists;
         this.context = context;
+        initIds(bookLists);
+    }
+
+    private void initIds(List<BookList> bookLists) {
+        ids = new ArrayList<>();
+        for(BookList bookList: bookLists) {
+            ids.add(bookList.getIds().get(0));
+            ids.add(bookList.getIds().get(1));
+            ids.add(bookList.getIds().get(2));
+        }
     }
 
     @Override
@@ -48,7 +63,7 @@ public class LabelRecommendBookListAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return bookLists.get(position);
     }
 
     @Override
@@ -75,36 +90,40 @@ public class LabelRecommendBookListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         bookList = bookLists.get(position);
-        intent = new Intent(context, BookIntroductionActivity.class);
         //这里需要传入id
-
         ImageLoader.getInstance().displayImage(bookList.getUrl(), viewHolder.banner);
         viewHolder.title.setText(bookList.getTitle());
         viewHolder.number.setText(bookList.getNumber() + "人看过");
-//        viewHolder.item1.setBackgroundResource(R.mipmap.app_label_recommend_book_item1);
-//        viewHolder.item2.setBackgroundResource(R.mipmap.app_label_recommend_book_item2);
-//        viewHolder.item3.setBackgroundResource(R.mipmap.app_label_recommend_book_item3);
-        ImageLoader.getInstance().displayImage(bookList.getUrls().get(0), viewHolder.item1);
-        ImageLoader.getInstance().displayImage(bookList.getUrls().get(1), viewHolder.item2);
-        ImageLoader.getInstance().displayImage(bookList.getUrls().get(2), viewHolder.item3);
+        //显示图片的配置
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .build();
+        imageLoader.displayImage(bookList.getUrls().get(0), viewHolder.item1, options);
+        imageLoader.displayImage(bookList.getUrls().get(1), viewHolder.item2, options);
+        imageLoader.displayImage(bookList.getUrls().get(2), viewHolder.item3, options);
+
         viewHolder.item1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("bookId", bookList.getIds().get(0));
+                Intent intent = new Intent(context,BookIntroductionActivity.class);
+                intent.putExtra("bookId", ids.get(position * 3  + 0));
                 context.startActivity(intent);
             }
         });
         viewHolder.item2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("bookId", bookList.getIds().get(1));
+                Intent intent = new Intent(context,BookIntroductionActivity.class);
+                intent.putExtra("bookId", ids.get(position * 3 + 1));
                 context.startActivity(intent);
             }
         });
         viewHolder.item3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("bookId", bookList.getIds().get(2));
+                Intent intent = new Intent(context,BookIntroductionActivity.class);
+                intent.putExtra("bookId", ids.get(position * 3  + 2));
                 context.startActivity(intent);
             }
         });

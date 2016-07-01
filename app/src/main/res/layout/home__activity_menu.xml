@@ -16,7 +16,7 @@
             android:src="@mipmap/home__ic_menu_back" />
     </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
+   <!-- <LinearLayout
         android:id="@+id/profile_group"
         style="@style/LinearLayout.GuillotineItem"
         android:layout_marginTop="@dimen/guillotine_medium_margin">
@@ -70,5 +70,5 @@
             style="@style/ImageView.GuillotineItem"
             android:src="@mipmap/home__ic_menu_settings" />
 
-    </LinearLayout>
+    </LinearLayout>-->
 </LinearLayout>

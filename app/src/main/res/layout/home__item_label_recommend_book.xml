@@ -83,18 +83,23 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@color/divider_color"
+            android:layout_marginRight="2dp"
             android:scaleType="fitXY"/>
         <ImageView
             android:id="@+id/label_recommend_book_grid_item2"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@color/divider_color"
+            android:layout_marginRight="2dp"
             android:scaleType="fitXY"/>
         <ImageView
             android:id="@+id/label_recommend_book_grid_item3"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@color/divider_color"
             android:scaleType="fitXY"/>
     </LinearLayout>
 </LinearLayout>

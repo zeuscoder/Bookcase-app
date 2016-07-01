@@ -17,6 +17,8 @@ public class Address extends BmobObject implements Serializable {
 
     private String address;
 
+    private String post;
+
     private String phone;
 
     public String getPhone() {
@@ -57,5 +59,13 @@ public class Address extends BmobObject implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
     }
 }

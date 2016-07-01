@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zeus.bookcase.app.R;
+import com.zeus.bookcase.app.base.utils.LoginCOntext;
+import com.zeus.bookcase.app.home.model.Order;
 import com.zeus.bookcase.app.home.model.dao.CartDao;
 import com.zeus.bookcase.app.home.model.dao.FavoriteDao;
+import com.zeus.bookcase.app.home.model.dao.OrderDao;
 import com.zeus.bookcase.app.user.adapter.DayRecommendAdapter;
 import com.zeus.bookcase.app.user.interfaces.OnDragStateChangeListener;
 import com.zeus.bookcase.app.user.model.User;
@@ -32,9 +36,14 @@ import com.zeus.bookcase.app.user.view.InboxBackgroundScrollView;
 import com.zeus.bookcase.app.user.view.InboxLayoutBase;
 import com.zeus.bookcase.app.user.view.InboxLayoutListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.listener.FindListener;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -76,6 +85,9 @@ public class MySelfFragment extends Fragment implements View.OnClickListener {
     private AddressDao addressDao;
     private CartDao cartDao;
     private FavoriteDao favoriteDao;
+    private OrderDao orderDao;
+
+    private List<Order> orders;
 
     private final int LOGINREQUESTCODE = 100;
     private final int EXITREQUESTCODE = 101;
@@ -101,7 +113,9 @@ public class MySelfFragment extends Fragment implements View.OnClickListener {
         favoriteDao = new FavoriteDao(getActivity());
         addressDao = new AddressDao(getActivity());
         cartDao = new CartDao(getActivity());
+        orderDao = new OrderDao(getActivity());
         user = BmobUser.getCurrentUser(getActivity(), User.class);
+        orders = new ArrayList<Order>();
         initData();
     }
 
@@ -118,11 +132,12 @@ public class MySelfFragment extends Fragment implements View.OnClickListener {
         settingOrLogin.setText("设置");
         level.setVisibility(View.VISIBLE);
         photo.setImageResource(R.mipmap.user__profile_photo);
-
-        allOrderCount.setText(String.valueOf(1));
+//        ImageLoader.getInstance().displayImage(user.getImage(), photo);
+        getAllOrder(user);
         favoriteNumber.setText(String.valueOf(favoriteDao.getCount(user)));
         cartNumber.setText(String.valueOf(cartDao.getCount(user)));
         allAddressCount.setText(String.valueOf(addressDao.getCount(user)));
+
     }
 
     private void setDataWithoutUser() {
@@ -276,5 +291,33 @@ public class MySelfFragment extends Fragment implements View.OnClickListener {
                     break;
             }
         }
+//        if (1 == 0) {
+//            shoppingCart();
+//        }
     }
+
+
+    public void getAllOrder(User user) {
+        BmobQuery<Order> query = new BmobQuery<Order>();
+        query.addWhereEqualTo("uid", user.getObjectId().toString());
+        query.findObjects(getActivity(), new FindListener<Order>() {
+            @Override
+            public void onSuccess(List<Order> list) {
+                orders.addAll(list);
+                allOrderCount.setText(String.valueOf(list.size()));
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                Toast.makeText(getActivity(), "查询订单失败", Toast.LENGTH_SHORT).show();
+                Log.e("lvzimou--order-fail", s.toString());
+            }
+        });
+
+    }
+
+    private void shoppingCart() {
+        LoginCOntext.getLoginContext().shopping(getContext());
+    }
+
 }

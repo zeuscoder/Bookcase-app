@@ -28,7 +28,7 @@
             android:textSize="25sp"/>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/music_store"
+        android:id="@+id/add_book"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

@@ -1,11 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_color">
 
     <include layout="@layout/app__activity_base_toolbar"/>
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardUseCompatPadding="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin_small"
+        android:layout_marginRight="@dimen/activity_horizontal_margin_small"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="4sp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/case_book_image"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divider_color"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/case_book_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Android源代码设计模式"
+                        android:textSize="16sp"
+                        android:textColor="#333"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                    <TextView
+                        android:id="@+id/case_book_author_pubdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="何红辉 2015-11-09"
+                        android:textSize="14sp"
+                        android:textColor="#999"/>
+
+                    <TextView
+                        android:id="@+id/case_book_summary2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/suibian"
+                        android:textSize="13sp"
+                        android:textColor="#666"
+                        android:lineSpacingExtra="1.5dp"
+                        android:lineSpacingMultiplier="1.0"
+                        android:maxLines="4"
+                        android:ellipsize="end"/>
+
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/case_book_choose"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@color/positive_loud"
+                    android:src="@drawable/case__item__tack" />
+            </LinearLayout>
+            <include layout="@layout/app__divider_gray_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="交易条件："
+                    android:textSize="16sp"
+                    android:textColor="#333"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+                <EditText
+                    android:id="@+id/case_book_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="填写您需要交换书籍的条件"
+                    android:textSize="16sp"
+                    android:textColor="@color/app_background_dark" />
+            </LinearLayout>
+
+            <include layout="@layout/app__divider_gray_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="交易期限："
+                    android:textSize="16sp"
+                    android:textColor="#333"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+                <EditText
+                    android:id="@+id/case_book_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="填写您需要交换书籍的时间限制"
+                    android:textSize="16sp"
+                    android:textColor="@color/app_background_dark" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:showDividers="middle"
+        android:divider="@drawable/app__divider_shape"
+        >
+        <TextView
+            android:id="@+id/case__delete_transaction"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/circle"
+            android:text="取消交易"/>
+        <TextView
+            android:id="@+id/case__insert_transaction"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/circle"
+            android:text="提出交易"/>
+    </LinearLayout>
 
 </LinearLayout>

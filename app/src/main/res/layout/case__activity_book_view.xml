@@ -27,7 +27,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
-                    android:src="@mipmap/home__item_book"/>
+                    android:background="@color/divider_color"/>
                 <TextView
                     android:id="@+id/book_title"
                     android:layout_width="wrap_content"

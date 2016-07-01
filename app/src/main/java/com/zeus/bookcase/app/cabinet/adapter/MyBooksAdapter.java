@@ -34,7 +34,7 @@ public class MyBooksAdapter extends ArrayAdapter<Model> {
         view.setTag(item);
         ((TextView)view.findViewById(R.id.description)).setText(item.getDescription());
         ((TextView)view.findViewById(R.id.name)).setText(item.getName());
-        ImageView avatar = (ImageView)view.findViewById(R.id.avatar);
+        ImageView avatar = (ImageView)view.findViewById(R.id.case_choose_my_book_image);
         Picasso.with(parent.getContext())
                 .load(item.getAvatarUri())
                 .placeholder(R.mipmap.user__normal_photo)

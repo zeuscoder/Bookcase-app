@@ -35,6 +35,7 @@ public class BookDao {
     private final String SUMMARY = "summary";
     private final String PUBLISHER = "publisher";
     private final String PUBDATE = "pubdate";
+    private final String STATE = "state";
     private final String[] BOOK_COLUMNS = new String[] {
             ID,
             UID,
@@ -45,7 +46,8 @@ public class BookDao {
             IMAGE,
             SUMMARY,
             PUBLISHER,
-            PUBDATE
+            PUBDATE,
+            STATE
     };
 
     private Context context;
@@ -187,6 +189,7 @@ public class BookDao {
             contentValues.put(SUMMARY, book.getSummary());
             contentValues.put(PUBLISHER, book.getPublisher());
             contentValues.put(PUBDATE, book.getPubdate());
+            contentValues.put(STATE, book.getState());
             db.insertOrThrow(BookDao.TABLE_BOOK, null, contentValues);
             db.setTransactionSuccessful();
             return true;
@@ -310,6 +313,7 @@ public class BookDao {
         book.setSummary(cursor.getString(cursor.getColumnIndex(SUMMARY)));
         book.setPublisher(cursor.getString(cursor.getColumnIndex(PUBLISHER)));
         book.setPubdate(cursor.getString(cursor.getColumnIndex(PUBDATE)));
+        book.setState(cursor.getString(cursor.getColumnIndex(STATE)));
         return book;
     }
 

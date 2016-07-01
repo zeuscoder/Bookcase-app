@@ -30,6 +30,8 @@ public class MyBook implements Serializable {
     private String summary;
     //图书价格
     private String price;
+    //交易状态
+    private String state;
 
     public String getUid() {
         return uid;
@@ -121,5 +123,13 @@ public class MyBook implements Serializable {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

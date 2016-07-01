@@ -131,6 +131,7 @@ public class MyBookActivity extends BaseActivity {
                 Intent intent = new Intent(MyBookActivity.this, BookViewActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("book", book);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -168,5 +169,11 @@ public class MyBookActivity extends BaseActivity {
     private int dp2px(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
                 getResources().getDisplayMetrics());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 }

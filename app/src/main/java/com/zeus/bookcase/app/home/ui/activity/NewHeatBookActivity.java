@@ -39,22 +39,15 @@ public class NewHeatBookActivity extends BaseActivity {
 
     private void setData() {
         list = new ArrayList<String>();
-        list.add("http://img4.imgtn.bdimg.com/it/u=1914385367,2773465149&fm=21&gp=0.jpg");
-        list.add("http://img2.imgtn.bdimg.com/it/u=1459528716,2382015290&fm=21&gp=0.jpg");
-        list.add("http://img4.imgtn.bdimg.com/it/u=3882347136,1187674664&fm=21&gp=0.jpg");
-        list.add("http://img3.imgtn.bdimg.com/it/u=3616248447,1939819186&fm=21&gp=0.jpg");
-        list.add("http://img4.imgtn.bdimg.com/it/u=3143204377,1920131569&fm=21&gp=0.jpg");
-        list.add("http://img0.imgtn.bdimg.com/it/u=98744119,1601059181&fm=21&gp=0.jpg");
-        list.add("http://img0.imgtn.bdimg.com/it/u=1351354913,484173169&fm=21&gp=0.jpg");
-        list.add("http://img0.imgtn.bdimg.com/it/u=741981606,3155267448&fm=21&gp=0.jpg");
-        list.add("http://img4.imgtn.bdimg.com/it/u=1914385367,2773465149&fm=21&gp=0.jpg");
-        list.add("http://img2.imgtn.bdimg.com/it/u=1459528716,2382015290&fm=21&gp=0.jpg");
-        list.add("http://img4.imgtn.bdimg.com/it/u=3882347136,1187674664&fm=21&gp=0.jpg");
-        list.add("http://img3.imgtn.bdimg.com/it/u=3616248447,1939819186&fm=21&gp=0.jpg");
-        list.add("http://img4.imgtn.bdimg.com/it/u=3143204377,1920131569&fm=21&gp=0.jpg");
-        list.add("http://img0.imgtn.bdimg.com/it/u=98744119,1601059181&fm=21&gp=0.jpg");
-        list.add("http://img0.imgtn.bdimg.com/it/u=1351354913,484173169&fm=21&gp=0.jpg");
-        list.add("http://img0.imgtn.bdimg.com/it/u=741981606,3155267448&fm=21&gp=0.jpg");
+        list.add("https://img3.doubanio.com/mpic/s28351121.jpg");
+        list.add("https://img1.doubanio.com/mpic/s27997453.jpg");
+        list.add("https://img1.doubanio.com/mpic/s6641009.jpg");
+        list.add("https://img1.doubanio.com/mpic/s28320163.jpg");
+        list.add("https://img3.doubanio.com/mpic/s28293575.jpg");
+        list.add("https://img3.doubanio.com/mpic/s2686916.jpg");
+        list.add("https://img3.doubanio.com/mpic/s28283341.jpg");
+        list.add("https://img3.doubanio.com/mpic/s28283341.jpg");
+        list.add("https://img3.doubanio.com/mpic/s28283341.jpg");
         bookAdapter = new BookListViewAdapter(this,list);
         bookList.setAdapter(bookAdapter);
     }

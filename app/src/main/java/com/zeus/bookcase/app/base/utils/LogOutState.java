@@ -10,14 +10,7 @@ import com.zeus.bookcase.app.user.ui.activity.LogInActivity;
  * Created by zeus_coder on 2016/3/20.
  */
 public class LogOutState implements UserState {
-
-    @Override
     public void shopping(Context context) {
-        goLoginActivity(context);
-    }
-
-    private void goLoginActivity(Context context) {
         Intent intent = new Intent(context, LogInActivity.class);
-        context.startActivity(intent);
-    }
+        context.startActivity(intent);}
 }

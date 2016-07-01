@@ -9,7 +9,6 @@
     <com.baoyz.swipemenulistview.SwipeMenuListView
         android:id="@+id/list_favorites"
         android:background="#F7F4F0"
-        android:dividerHeight="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

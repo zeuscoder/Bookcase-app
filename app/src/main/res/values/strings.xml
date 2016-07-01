@@ -45,6 +45,8 @@
     <string name="activity_charge">交易平台</string>
     <string name="activity_music">乐趣</string>
     <string name="activity_film">影室</string>
+    <string name="activity_apply">交易申请</string>
+    <string name="activity_applyed">申请交易</string>
 
 
     <!--**************************************************MySelfFragment*******************************************************-->

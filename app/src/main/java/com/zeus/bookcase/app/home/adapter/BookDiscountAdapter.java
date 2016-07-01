@@ -9,13 +9,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zeus.bookcase.app.R;
+import com.zeus.bookcase.app.home.model.book.Book;
 import com.zeus.common.util.DynamicHeightTextView;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -28,16 +33,21 @@ public class BookDiscountAdapter extends BaseAdapter {
     static class ViewHolder {
 //        DynamicHeightTextView txtLineOne;
 //        Button btnGo;
+        private ImageView image;
+        private TextView summary;
+        private TextView price;
     }
 
     private final LayoutInflater mLayoutInflater;
+    private List<Book> books;
 //    private final Random mRandom;
 //    private final ArrayList<Integer> mBackgroundColors;
 
     private static final SparseArray<Double> sPositionHeightRatios = new SparseArray<Double>();
 
-    public BookDiscountAdapter(Context context) {
+    public BookDiscountAdapter(Context context, List<Book> books) {
         mLayoutInflater = LayoutInflater.from(context);
+        this.books = books;
 //        mRandom = new Random();
 //        mBackgroundColors = new ArrayList<Integer>();
 //        mBackgroundColors.add(R.color.orange);
@@ -49,35 +59,39 @@ public class BookDiscountAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 10;
+        return books.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return books.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
-
         ViewHolder viewHolder;
+        Book book = books.get(position);
         if (convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.home__item_activity_book_discount, parent, false);
             viewHolder = new ViewHolder();
+            viewHolder.image = (ImageView) convertView.findViewById(R.id.home_ca_book_image);
+            viewHolder.summary = (TextView) convertView.findViewById(R.id.home_ca_book_summary);
+            viewHolder.price = (TextView) convertView.findViewById(R.id.home_ca_book_price);
 //            viewHolder.txtLineOne = (DynamicHeightTextView) convertView.findViewById(R.id.txt_line1);
 //            viewHolder.btnGo = (Button) convertView.findViewById(R.id.btn_go);
-
             convertView.setTag(viewHolder);
         }
         else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
+        ImageLoader.getInstance().displayImage(book.getImage(), viewHolder.image);
+        viewHolder.summary.setText(book.getSummary());
+        viewHolder.price.setText("￥" + book.getPrice());
 //        double positionHeight = getPositionRatio(position);
 //        int backgroundIndex = position >= mBackgroundColors.size() ?
 //                position % mBackgroundColors.size() : position;
@@ -96,7 +110,6 @@ public class BookDiscountAdapter extends BaseAdapter {
 //                        position, Toast.LENGTH_SHORT).show();
 //            }
 //        });
-
         return convertView;
     }
 //

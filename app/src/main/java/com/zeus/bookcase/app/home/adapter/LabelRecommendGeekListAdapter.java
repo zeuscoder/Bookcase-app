@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.home.model.Geek;
 
@@ -21,6 +23,7 @@ public class LabelRecommendGeekListAdapter extends BaseAdapter {
 
     private List<Geek> geeks;
     private Context context;
+    private ImageLoader imageLoader = ImageLoader.getInstance();
 
     public LabelRecommendGeekListAdapter(Context context, List geeks) {
         this.context = context;
@@ -58,8 +61,14 @@ public class LabelRecommendGeekListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         Geek geek = geeks.get(position);
-        //viewHolder.photo.setBackgroundResource(geek.getPhoto());
-        viewHolder.photo.setImageResource(geek.getPhoto());
+//        viewHolder.photo.setBackgroundResource(geek.getPhoto());
+//        viewHolder.photo.setImageResource(geek.getPhoto());
+        //显示图片的配置
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .build();
+        imageLoader.displayImage(geek.getImage(), viewHolder.photo, options);
         viewHolder.name.setText(geek.getName());
         viewHolder.title.setText(geek.getTitle());
         return view;

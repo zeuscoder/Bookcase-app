@@ -26,14 +26,16 @@ public class AddressDao {
     //列定义
     private final String ID = "id";
     private final String UID = "uid";
-    private final String Name = "name";
+    private final String NAME = "name";
     private final String ADDRESS = "address";
     private final String PHONE = "phone";
+    private final String POST = "post";
     private final String[] ADDRESS_COLUMNS = new String[] {
             ID,
             UID,
-            Name,
+            NAME,
             ADDRESS,
+            POST,
             PHONE};
 
     private Context context;
@@ -205,8 +207,9 @@ public class AddressDao {
             ContentValues contentValues = new ContentValues();
             contentValues.put(ID, address.getId());
             contentValues.put(UID, address.getUid());
-            contentValues.put(Name, address.getName());
+            contentValues.put(NAME, address.getName());
             contentValues.put(ADDRESS, address.getAddress());
+            contentValues.put(POST, address.getPost());
             contentValues.put(PHONE, address.getPhone());
             db.insertOrThrow(AddressDao.TABLE_ADDRESS, null, contentValues);
 
@@ -264,7 +267,8 @@ public class AddressDao {
             ContentValues cv = new ContentValues();
             cv.put(ADDRESS, address.getAddress().toString());
             cv.put(PHONE, address.getPhone().toString());
-            cv.put(Name, address.getName().toString());
+            cv.put(POST, address.getPost().toString());
+            cv.put(NAME, address.getName().toString());
             db.update(AddressDao.TABLE_ADDRESS,
                     cv,
                     "id = ?",
@@ -328,8 +332,9 @@ public class AddressDao {
         Address address = new Address();
         address.setId(cursor.getString(cursor.getColumnIndex(ID)));
         address.setUid(cursor.getString(cursor.getColumnIndex(UID)));
-        address.setName(cursor.getString(cursor.getColumnIndex(Name)));
+        address.setName(cursor.getString(cursor.getColumnIndex(NAME)));
         address.setAddress(cursor.getString(cursor.getColumnIndex(ADDRESS)));
+        address.setPost(cursor.getString(cursor.getColumnIndex(POST)));
         address.setPhone(cursor.getString(cursor.getColumnIndex(PHONE)));
         return address;
     }

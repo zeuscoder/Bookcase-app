@@ -19,8 +19,8 @@ import com.zeus.bookcase.app.home.adapter.LabelRecommendGeekListAdapter;
 import com.zeus.bookcase.app.home.data.MockData;
 import com.zeus.bookcase.app.home.model.BookList;
 import com.zeus.bookcase.app.home.model.Geek;
-import com.zeus.bookcase.app.home.ui.activity.BookFoldableActivity;
-import com.zeus.bookcase.app.home.ui.activity.BookListActivity;
+import com.zeus.bookcase.app.home.ui.activity.BookCategoryActivity;
+import com.zeus.bookcase.app.home.ui.activity.NewHeatBookActivity;
 import com.zeus.bookcase.app.home.ui.activity.GeekPersonalActivity;
 import com.zeus.bookcase.app.home.ui.activity.GeekSummaryListActivity;
 import com.zeus.bookcase.app.home.ui.activity.PreferenceWebActivity;
@@ -99,7 +99,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         labelRecommendGeekList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(getActivity(), GeekPersonalActivity.class));
+                Intent intent = new Intent(getActivity(), GeekPersonalActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("geek", geeks.get(i));
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }
@@ -128,11 +132,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void goBookListActivity() {
-        startActivity(new Intent(getActivity(), BookListActivity.class));
+        startActivity(new Intent(getActivity(), NewHeatBookActivity.class));
     }
 
     private void goBookFoldableActivity() {
-        startActivity(new Intent(getActivity(), BookFoldableActivity.class));
+        startActivity(new Intent(getActivity(), BookCategoryActivity.class));
     }
 
     private void goWebActivity() {

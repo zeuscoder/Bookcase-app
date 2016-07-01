@@ -10,10 +10,7 @@ import com.zeus.bookcase.app.user.ui.activity.UserShoppingCartActivity;
  * Created by zeus_coder on 2016/3/20.
  */
 public class LoginState implements UserState {
-
-    @Override
     public void shopping(Context context) {
         Intent intent = new Intent(context, UserShoppingCartActivity.class);
-        context.startActivity(intent);
-    }
+        context.startActivity(intent);}
 }

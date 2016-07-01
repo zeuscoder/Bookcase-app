@@ -14,8 +14,15 @@ public class User extends BmobUser implements Serializable {
     private String image;
     private String level;
     private Count count;
+    private String sign;
 
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public Boolean getGender() {
         return gender;
@@ -33,5 +40,11 @@ public class User extends BmobUser implements Serializable {
         this.nickName = nickName;
     }
 
+    public String getSign() {
+        return sign;
+    }
 
+    public void setSign(String sign) {
+        this.sign = sign;
+    }
 }

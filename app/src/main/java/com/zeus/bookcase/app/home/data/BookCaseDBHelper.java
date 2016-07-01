@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class BookCaseDBHelper extends SQLiteOpenHelper {
 
     //数据库常量
-    private static final int DB_VERSION = 6;
+    private static final int DB_VERSION = 7;
     private static final String DB_NAME = "Bookcase";
     private static final String TABLE_BOOK = "Book";
     private static final String TABLE_ADDRESS = "Address";
@@ -28,6 +28,7 @@ public class BookCaseDBHelper extends SQLiteOpenHelper {
             "summary text, " +
             "publisher text, " +
             "pubdate text, " +
+            "state text, " +
             "primary key(id,uid))";
 
     private static final String CREATE_ADDRESS = "create table if not exists " + TABLE_ADDRESS + " (" +
@@ -35,6 +36,7 @@ public class BookCaseDBHelper extends SQLiteOpenHelper {
             "uid text, " +
             "name text, " +
             "address text, " +
+            "post text, " +
             "phone text)";
 
     private static final String CREATE_CART = "create table if not exists " + TABLE_CART + " (" +

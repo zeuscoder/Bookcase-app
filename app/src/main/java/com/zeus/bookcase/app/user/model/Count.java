@@ -9,8 +9,19 @@ import cn.bmob.v3.BmobObject;
  */
 public class Count extends BmobObject implements Serializable {
 
+    private String uid;
+
     private Integer points;
+
     private Double money;
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public Integer getPoints() {
         return points;

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 
 import com.zeus.bookcase.app.R;
+import com.zeus.bookcase.app.cabinet.model.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,7 @@ public class CardSlidePanel extends ViewGroup {
     private Object obj1 = new Object();
 
     private CardSwitchListener cardSwitchListener; // 回调接口
-    private List<CardDataItem> dataList; // 存储的数据链表
+    private List<Transaction> dataList; // 存储的数据链表
     private int isShowing = 0; // 当前正在显示的小项
     private View leftBtn, rightBtn;
     private long lastClickTime = 0;
@@ -230,7 +231,7 @@ public class CardSlidePanel extends ViewGroup {
             // 3. changedView填充新数据
             int newIndex = isShowing + 4;
             if (newIndex < dataList.size()) {
-                CardDataItem dataItem = dataList.get(newIndex);
+                Transaction dataItem = dataList.get(newIndex);
                 changedView.fillData(dataItem);
             } else {
                 changedView.setVisibility(View.INVISIBLE);
@@ -499,7 +500,7 @@ public class CardSlidePanel extends ViewGroup {
      *
      * @param dataList 数据
      */
-    public void fillData(List<CardDataItem> dataList) {
+    public void fillData(List<Transaction> dataList) {
         this.dataList = dataList;
 
         int num = viewList.size();
@@ -520,7 +521,7 @@ public class CardSlidePanel extends ViewGroup {
      *
      * @param appendList 新数据列表
      */
-    public void appendData(List<CardDataItem> appendList) {
+    public void appendData(List<Transaction> appendList) {
         dataList.addAll(appendList);
 
         int currentIndex = isShowing;

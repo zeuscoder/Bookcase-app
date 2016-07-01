@@ -12,16 +12,18 @@
             android:layout_height="200dp"
             android:background="@mipmap/home__geek_personal_bg"/>
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/home_geek_image"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:src="@mipmap/user__profile_photo"
+            android:src="@mipmap/user__normal_photo"
             app:civ_border_width="2dp"
             app:civ_border_color="#FFFFFF"/>
     </RelativeLayout>
     <TextView
+        android:id="@+id/home_geek_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -30,6 +32,7 @@
         android:textSize="20sp"
         android:textColor="#000"/>
     <TextView
+        android:id="@+id/home_geek_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -38,6 +41,7 @@
         android:textSize="13sp"
         android:textColor="#999"/>
     <TextView
+        android:id="@+id/home_geek_decr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -63,7 +67,7 @@
             android:visibility="gone"
             android:textColor="@color/selected_item_color"
             android:background="@drawable/home__btn_chat_shape"/>
-        <Button
+<!--        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -71,10 +75,11 @@
             android:textSize="13sp"
             android:layout_gravity="center"
             android:textColor="@color/app_background"
-            android:background="@drawable/home__btn_follow_shape"/>
+            android:background="@drawable/home__btn_follow_shape"/>-->
     </LinearLayout>
 
     <TextView
+        android:id="@+id/home_geek_comment_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

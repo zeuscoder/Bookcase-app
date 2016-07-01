@@ -23,6 +23,7 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
     private EditText address;
     private EditText name;
     private EditText phone;
+    private EditText post;
 
     private Button addAddress;
 
@@ -47,25 +48,28 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
     private void initView() {
         address = (EditText) findViewById(R.id.user_address_detail);
         name = (EditText) findViewById(R.id.user_address_name);
+        post = (EditText) findViewById(R.id.user_address_post);
         phone = (EditText) findViewById(R.id.user_address_phone);
 
         addAddress = (Button) findViewById(R.id.user_add_address);
-        addAddress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addressModel = new Address();
-                addressModel.setId(addressDao.getCount(user) + 1 + "");
-                addressModel.setUid(user.getObjectId().toString());
-                addressModel.setAddress(address.getText().toString());
-                addressModel.setName(name.getText().toString());
-                addressModel.setPhone(phone.getText().toString());
-                if (addressDao.insertAddress(addressModel)) {
-                    AddAddressActivity.this.finish();
-                } else {
-                    Toast.makeText(AddAddressActivity.this, "新增失败", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        addAddress.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                addressModel = new Address();
+//                addressModel.setId(addressDao.getCount(user) + 1 + "");
+//                addressModel.setUid(user.getObjectId().toString());
+//                addressModel.setAddress(address.getText().toString());
+//                addressModel.setName(name.getText().toString());
+//                addressModel.setPost("510000");
+//                addressModel.setPhone(phone.getText().toString());
+//                if (addressDao.insertAddress(addressModel)) {
+//                    AddAddressActivity.this.finish();
+//                } else {
+//                    Toast.makeText(AddAddressActivity.this, "新增失败", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+        addAddress.setOnClickListener(this);
     }
 
     private void initData() {
@@ -87,6 +91,7 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
         addressModel.setUid(user.getObjectId().toString());
         addressModel.setAddress(address.getText().toString());
         addressModel.setName(name.getText().toString());
+        addressModel.setPost(post.getText().toString());
         addressModel.setPhone(phone.getText().toString());
         if (flag) {
             if (addressDao.updateAddress(addressModel)) {

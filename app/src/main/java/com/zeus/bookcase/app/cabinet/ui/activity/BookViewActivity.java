@@ -17,6 +17,7 @@ import com.zeus.bookcase.app.cabinet.model.MyBook;
 import com.zeus.bookcase.app.cabinet.model.dao.BookDao;
 import com.zeus.bookcase.app.home.api.BaseAsyncHttp;
 import com.zeus.bookcase.app.home.api.HttpResponseHandler;
+import com.zeus.bookcase.app.home.model.book.Book;
 import com.zeus.bookcase.app.home.ui.activity.BookIntroductionActivity;
 import com.zeus.bookcase.app.home.widget.ExpandableTextView;
 import com.zeus.bookcase.app.user.model.User;
@@ -60,6 +61,7 @@ public class BookViewActivity extends BaseActivity implements View.OnClickListen
 
     private BookDao bookDao;
     private User user;
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +76,9 @@ public class BookViewActivity extends BaseActivity implements View.OnClickListen
 
     private void initData() {
         if (getIntent().hasExtra("book")) {
-            book = (MyBook) getIntent().getSerializableExtra("book");
+            Bundle bundle = getIntent().getExtras();
+            book = (MyBook) bundle.getSerializable("book");
+            flag = true;
             updateToView();
         } else if (getIntent().hasExtra("isbn")) {
             isbn = getIntent().getStringExtra("isbn");
@@ -91,6 +95,7 @@ public class BookViewActivity extends BaseActivity implements View.OnClickListen
             public void jsonSuccess(JSONObject resp) {
                 Gson gson = new Gson();
                 book = gson.fromJson(String.valueOf(resp), MyBook.class);
+                flag = false;
                 updateToView();
             }
 
@@ -106,7 +111,11 @@ public class BookViewActivity extends BaseActivity implements View.OnClickListen
 
     private void updateToView() {
         title.setText(book.getTitle().trim());
-        author.setText(book.getAuthors().trim());
+        if (!flag) {
+            author.setText(book.getAuthors().trim());
+        } else {
+            author.setVisibility(View.INVISIBLE);
+        }
         printer.setText(book.getPublisher().trim());
         date.setText(book.getPubdate().trim());
         price.setText("￥" + book.getPrice().trim());
@@ -116,8 +125,8 @@ public class BookViewActivity extends BaseActivity implements View.OnClickListen
         else
             content.setText(book.getSummary());
         ImageLoader.getInstance().displayImage(book.getImage(), picture);
-        Log.i("lvzimou------id", book.getId().toString());
-        Log.i("lvzimou------bitmap", book.getImage().toString());
+        Log.i("lvzimou----book-id", book.getId().toString());
+        Log.i("lvzimou----book-bitmap", book.getImage().toString());
     }
 
     @Override
@@ -128,6 +137,7 @@ public class BookViewActivity extends BaseActivity implements View.OnClickListen
     @OnClick(R.id.book_add_book)
     void addBook() {
         book.setUid(user.getObjectId().toString());
+        book.setState("未交易");
         if (bookDao.insertBook(book)) {
             BookViewActivity.this.finish();
             Toast.makeText(BookViewActivity.this, "新增书籍成功", Toast.LENGTH_SHORT).show();

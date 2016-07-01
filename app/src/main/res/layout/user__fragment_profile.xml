@@ -157,10 +157,10 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <View
+<!--                <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
-                    android:background="#999999"/>
+                    android:background="#999999"/>-->
                 <!--<include layout="@layout/user__layout_order"/>-->
                 <!-- 其他信息 -->
                 <LinearLayout
@@ -201,6 +201,7 @@
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/points"
+                    android:visibility="gone"
                     style="@style/UserMainItemLayout">
                     <TextView
                         style="@style/UserMainItemTextTitle"
@@ -210,12 +211,14 @@
                         style="@style/UserMainItemTextDsrc"
                         android:text="" />
                 </LinearLayout>
-                <LinearLayout android:id="@+id/recommend"
+                <LinearLayout
+                    android:id="@+id/recommend"
+                    android:visibility="gone"
                     style="@style/UserMainItemLayout">
                     <TextView
                         style="@style/UserMainItemTextTitle"
                         android:text="每日推荐"
-                        android:drawableLeft="@mipmap/user__ic_order_lottery_enable"/>/>
+                        android:drawableLeft="@mipmap/user__ic_reserve_order_enable"/>/>
                     <ImageView android:id="@+id/subway_new" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/user__item_new_flag" android:layout_gravity="center_vertical"/>
                     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAlignBottom="@id/subway_new" android:src="@mipmap/user__ic_global_arrow_right_2px" android:layout_gravity="center_vertical" android:layout_marginLeft="4dp" android:layout_marginRight="@dimen/keyline_1"/>
                 </LinearLayout>

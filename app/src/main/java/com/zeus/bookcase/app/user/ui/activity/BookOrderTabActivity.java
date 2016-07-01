@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.user.ui.FirstFragment;
+import com.zeus.bookcase.app.user.ui.OrderFragment;
 import com.zeus.common.tabs.MaterialTab;
 import com.zeus.common.tabs.MaterialTabHost;
 import com.zeus.common.tabs.MaterialTabListener;
@@ -82,7 +83,11 @@ public class BookOrderTabActivity extends AppCompatActivity implements MaterialT
         }
 
         public Fragment getItem(int num) {
-            return new FirstFragment();
+            OrderFragment orderFragment = new OrderFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("state", num);
+            orderFragment.setArguments(bundle);
+            return orderFragment;
         }
 
         @Override

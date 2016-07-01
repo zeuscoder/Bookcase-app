@@ -8,23 +8,30 @@
 
     <include layout="@layout/app__activity_base_toolbar"/>
 
-    <ListView
-        android:id="@+id/list_shopping_cart"
-        android:background="#F7F4F0"
-        android:dividerHeight="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-    </ListView>
+    <!--<ListView-->
+        <!--android:id="@+id/list_shopping_cart"-->
+        <!--android:background="#F7F4F0"-->
+        <!--android:dividerHeight="15dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1">-->
+    <!--</ListView>-->
 
-    <LinearLayout
+    <com.baoyz.swipemenulistview.SwipeMenuListView
+        android:id="@+id/list_shopping_carts"
+        android:background="#F7F4F0"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+<!--    <LinearLayout
         android:id="@+id/shopping_cart_all"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="#ffffff"
-        android:orientation="horizontal">
+        android:orientation="horizontal">-->
 
-        <LinearLayout
+<!--        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
@@ -34,6 +41,7 @@
 
             <com.zeus.bookcase.app.user.view.AnimCheckBox
                 android:id="@+id/user_shopping_cart_all_check"
+                android:visibility="gone"
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
@@ -47,7 +55,6 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="全选"
                 android:textColor="#999999"
                 android:textSize="16sp"/>
 
@@ -67,18 +74,19 @@
                 android:textColor="#FF3333"
                 android:textSize="16sp"/>
 
-        </LinearLayout>
+        </LinearLayout>-->
 
-        <TextView
+<!--        <TextView
+            android:id="@+id/order_finish"
             android:layout_width="0dp"
             android:layout_height="55dp"
             android:layout_weight="2"
             android:gravity="center"
-            android:text="结算(0)"
+            android:text="结算"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:background="#FF3333"/>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
 </LinearLayout>

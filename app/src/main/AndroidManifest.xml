@@ -37,8 +37,8 @@
         <activity android:name=".home.ui.activity.BookSearchActivity"/>
         <activity android:name=".home.ui.activity.PreferenceWebActivity"/>
         <activity android:name=".home.ui.activity.BookPurchaseDetailActivity"/>
-        <activity android:name=".home.ui.activity.BookFoldableActivity"/>
-        <activity android:name=".home.ui.activity.BookListActivity"/>
+        <activity android:name=".home.ui.activity.BookCategoryActivity"/>
+        <activity android:name=".home.ui.activity.NewHeatBookActivity"/>
         <activity android:name=".home.ui.activity.BookOrderConfirmActivity" android:windowSoftInputMode="stateUnspecified|adjustPan"/>
         <activity android:name=".home.ui.activity.BookDiscountActivity"/>
         <activity android:name=".home.ui.activity.GeekPersonalActivity"/>
@@ -57,7 +57,7 @@
         <!-- Market -->
 
         <!-- Case -->
-        <activity android:name=".cabinet.ui.activity.BookLibraryActivity"/>
+        <activity android:name=".cabinet.ui.activity.ChooseMyBookActivity"/>
         <activity android:name=".cabinet.ui.activity.MusicCardActivity"/>
         <activity android:name=".cabinet.ui.activity.FilmRoomActivity"/>
         <activity android:name=".cabinet.ui.activity.CaptureActivity"/>
@@ -66,6 +66,8 @@
         <activity android:name=".cabinet.ui.activity.BookViewActivity"/>
         <activity android:name=".cabinet.ui.activity.MyBookActivity"/>
         <activity android:name=".cabinet.ui.activity.TransactionActivity"/>
+        <activity android:name=".cabinet.ui.activity.NewTransactionActivity"/>
+        <activity android:name=".cabinet.ui.activity.TransactionConditionActivity"/>
 
         <!--  User  -->
         <activity android:name=".user.ui.activity.UserFavoritesActivity"/>

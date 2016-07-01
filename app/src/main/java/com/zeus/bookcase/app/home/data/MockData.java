@@ -32,7 +32,7 @@ public class MockData {
         String[][] uris = {
                 {"https://img3.doubanio.com/mpic/s28351121.jpg", "https://img1.doubanio.com/mpic/s27997453.jpg", "https://img1.doubanio.com/mpic/s6641009.jpg"},
                 {"https://img1.doubanio.com/mpic/s28320163.jpg", "https://img3.doubanio.com/mpic/s28293575.jpg", "https://img3.doubanio.com/mpic/s2686916.jpg"},
-                {"https://img3.doubanio.com/mpic/s28283341.jpg", "https://img3.doubanio.com/mpic/s28283341.jpg", "https://img3.doubanio.com/mpic/s28283341.jpg"} };
+                {"https://img3.doubanio.com/mpic/s28283341.jpg", "https://img3.doubanio.com/mpic/s27243455.jpg", "https://img1.doubanio.com/mpic/s28327779.jpg"} };
         for (int i = 0; i < 3; i++) {
             List<String> uri = new ArrayList<>();
             uri.add(uris[i][0]);
@@ -44,7 +44,7 @@ public class MockData {
         String[][] ids = {
                 {"25942191", "25921329", "6515839"},
                 {"26644935", "26609447", "2243615"},
-                {"26599538", "26609447", "2243615"} };
+                {"26599538", "2130190", "26259017"} };
         for (int i = 0; i < 3; i++) {
             List<String> id = new ArrayList<>();
             id.add(ids[i][0]);
@@ -68,18 +68,32 @@ public class MockData {
     public static List<Geek> getGeeks() {
         //初始化geek数据
         List<Geek> geeks = new ArrayList<>();
-        int[] photos = { R.mipmap.app_home_geek_photo,
-                R.mipmap.app_home_geek_photo2,
-                R.mipmap.app_home_geek_photo3,
-                R.mipmap.app_home_geek_photo4,
-                R.mipmap.app_home_geek_photo5,
-                R.mipmap.app_home_geek_photo6 };
-        String[] names = { "Zeus",
-                "coder",
-                "James",
-                "Kobe",
-                "Jimmy",
-                "Merry" };
+//        int[] photos = { R.mipmap.app_home_geek_photo,
+//                R.mipmap.app_home_geek_photo2,
+//                R.mipmap.app_home_geek_photo3,
+//                R.mipmap.app_home_geek_photo4,
+//                R.mipmap.app_home_geek_photo5,
+//                R.mipmap.app_home_geek_photo6 };
+        String[] images = {
+                "http://ww2.sinaimg.cn/mw690/af493ad3jw1f2og80qn02j205k05k3ye.jpg",
+                "http://ww2.sinaimg.cn/mw690/af493ad3jw1f2og815f2kj205k05kjrb.jpg",
+                "http://ww2.sinaimg.cn/mw690/af493ad3jw1f2og7zm24dj205k05kdfs.jpg",
+                "http://ww4.sinaimg.cn/mw690/af493ad3jw1f2og7zm1psj205k05kglh.jpg",
+                "http://ww4.sinaimg.cn/mw690/af493ad3jw1f2og7yvkn8j205k05kglg.jpg",
+                "http://ww4.sinaimg.cn/mw690/af493ad3jw1f2og7yhruvj205k05kjr8.jpg"
+        };
+        String[] names = { "zeus",
+                "east",
+                "Look",
+                "Bricoleur",
+                "jimmy",
+                "merry" };
+        String[] ids = { "00184a30d2",
+                "38624b614a",
+                "886f9a31e7",
+                "261699f5c5",
+                "9debdd710b",
+                "vWTjKKKe" };
         String[] titles = { "帅气达人",
                 "技术达人",
                 "运动达人",
@@ -90,7 +104,8 @@ public class MockData {
             Geek geek = new Geek();
             geek.setName(names[i]);
             geek.setTitle(titles[i]);
-            geek.setPhoto(photos[i]);
+            geek.setImage(images[i]);
+            geek.setUid(ids[i]);
             geeks.add(geek);
         }
         return geeks;

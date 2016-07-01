@@ -23,6 +23,8 @@ public class ShoppingCartAdapter extends BaseAdapter implements AnimCheckBox.OnC
 
     private Context context;
     private List<Cart> carts;
+    private int count = 1;
+
 
     public ShoppingCartAdapter(Context context, List<Cart> carts) {
         this.context = context;
@@ -47,7 +49,7 @@ public class ShoppingCartAdapter extends BaseAdapter implements AnimCheckBox.OnC
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view;
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         Cart cart = carts.get(position);
         if(convertView == null) {
             view = LayoutInflater.from(context).inflate(R.layout.user__item_shopping_cart, null);
@@ -59,7 +61,9 @@ public class ShoppingCartAdapter extends BaseAdapter implements AnimCheckBox.OnC
             viewHolder.goodBookDerc = (TextView) view.findViewById(R.id.good_book_desc);
             viewHolder.goodNewPrice = (TextView) view.findViewById(R.id.good_book_new_price);
             viewHolder.goodOldPrice = (TextView) view.findViewById(R.id.good_book_old_price);
-            viewHolder.goodBookCount = (TextView) view.findViewById(R.id.good_book_count);
+            viewHolder.bookNumber = (TextView) view.findViewById(R.id.order_book_count);
+            viewHolder.minus = (ImageView) view.findViewById(R.id.order_book_count_minus);
+            viewHolder.plus = (ImageView) view.findViewById(R.id.order_book_count_plus);
 //            viewHolder.checkBox1 = (AnimCheckBox) view.findViewById(R.id.user_shopping_cart_check1);
             viewHolder.checkBox2 = (AnimCheckBox) view.findViewById(R.id.user_shopping_cart_check2);
             view.setTag(viewHolder);
@@ -72,6 +76,24 @@ public class ShoppingCartAdapter extends BaseAdapter implements AnimCheckBox.OnC
         viewHolder.goodBookDerc.setText(cart.getPublisher());
         viewHolder.goodNewPrice.setText(cart.getPrice());
         viewHolder.goodOldPrice.setText(String.valueOf(15));
+        viewHolder.minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (count > 1) {
+                    count -= 1;
+                    viewHolder.bookNumber.setText(String.valueOf(count));
+                }
+            }
+        });
+        viewHolder.plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (count < 10) {
+                    count += 1;
+                    viewHolder.bookNumber.setText(String.valueOf(count));
+                }
+            }
+        });
         //viewHolder.goodBookCount.setText();
         viewHolder.checkBox2.setChecked(false, false);
         viewHolder.checkBox2.setOnCheckedChangeListener(this);
@@ -94,5 +116,8 @@ public class ShoppingCartAdapter extends BaseAdapter implements AnimCheckBox.OnC
         private TextView goodBookCount;
         private AnimCheckBox checkBox1;
         private AnimCheckBox checkBox2;
+        private ImageView minus;
+        private ImageView plus;
+        private TextView bookNumber;
     }
 }

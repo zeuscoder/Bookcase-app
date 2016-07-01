@@ -8,11 +8,10 @@
     android:padding="10dp">
 
     <ImageView
-        android:id="@+id/app_search_book_image"
+        android:id="@+id/home_comment_book_image"
         android:layout_width="80dp"
         android:layout_height="110dp"
-        android:background="#FFFFFF"
-        android:src="@mipmap/home__item_book"
+        android:background="@color/divider_color"
         android:layout_marginRight="15dp"/>
 
     <LinearLayout
@@ -21,7 +20,7 @@
         android:layout_marginRight="5dp"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/app_search_book_title"
+            android:id="@+id/home_comment_book_abstract"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,6 +32,7 @@
             android:lineSpacingMultiplier="1.2"
             android:text="@string/article"/>
         <com.zeus.common.widget.LikeView
+            android:id="@+id/home_comment_book_like"
             android:layout_marginTop="3dp"
             android:layout_marginRight="10dp"
             android:layout_width="wrap_content"

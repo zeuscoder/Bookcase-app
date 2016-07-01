@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.base.BaseActivity;
 import com.zeus.bookcase.app.base.utils.LogOutState;
-import com.zeus.bookcase.app.base.utils.LoginContext;
+import com.zeus.bookcase.app.base.utils.LoginCOntext;
 import com.zeus.bookcase.app.user.model.User;
 
 import cn.bmob.v3.BmobUser;
@@ -70,11 +70,12 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
     private void exitUser() {
         BmobUser.logOut(SettingsActivity.this);
         if (BmobUser.getCurrentUser(this, User.class) == null) {
-            LoginContext.getLoginContext().setState(new LogOutState());
+            LoginCOntext.getLoginContext().setState(new LogOutState());
             Toast.makeText(SettingsActivity.this, "退出当前账号成功", Toast.LENGTH_SHORT).show();
             SettingsActivity.this.finish();
         } else {
             Toast.makeText(SettingsActivity.this, "退出当前账号失败", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

@@ -57,6 +57,7 @@ public class MySelfBookAdapter extends BaseSwipListAdapter {
             viewHolder.title = (TextView) view.findViewById(R.id.case_book_title);
             viewHolder.author = (TextView) view.findViewById(R.id.case_book_author_pubdate);
             viewHolder.summary = (TextView) view.findViewById(R.id.case_book_summary);
+            viewHolder.state = (TextView) view.findViewById(R.id.case_book_state);
             viewHolder.choose = (ImageButton) view.findViewById(R.id.case_book_choose );
             view.setTag(viewHolder);
         }
@@ -64,6 +65,7 @@ public class MySelfBookAdapter extends BaseSwipListAdapter {
         viewHolder.title.setText(book.getTitle());
         viewHolder.author.setText(book.getPublisher() + " " + book.getPubdate());
         viewHolder.summary.setText(book.getSummary());
+        viewHolder.state.setText(book.getState());
         viewHolder.choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,6 +80,7 @@ public class MySelfBookAdapter extends BaseSwipListAdapter {
         private TextView title;
         private TextView author;
         private TextView summary;
+        private TextView state;
         private ImageButton choose;
     }
 }

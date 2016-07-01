@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
  */
 public class CategoryBookAdapter extends RecyclerView.Adapter<CategoryBookAdapter.PhotoViewHolder> {
 
-    private String[] mTextset = { "互联网",
+    private String[] categories = { "互联网",
             "心理学",
             "传记",
             "体育",
@@ -55,14 +55,14 @@ public class CategoryBookAdapter extends RecyclerView.Adapter<CategoryBookAdapte
     }
 
     @Override
-    public void onBindViewHolder(final PhotoViewHolder holder, int position) {
+    public void onBindViewHolder(final PhotoViewHolder holder, final int position) {
         final String path = "content://com.zeus.bookcase/demo-pictures/" + mDataSet[position];
 
         // Bind data
         Picasso.with(holder.mFoldableLayout.getContext()).load(path).into(holder.mImageViewCover);
         Picasso.with(holder.mFoldableLayout.getContext()).load(path).into(holder.mImageViewDetail);
         //holder.mTextViewCover.setText(mDataSet[position].replace(".jpg", ""));
-        holder.mTextViewCover.setText(mTextset[position]);
+        holder.mTextViewCover.setText(categories[position]);
 
         // Bind state
         if (mFoldStates.containsKey(position)) {
@@ -82,13 +82,9 @@ public class CategoryBookAdapter extends RecyclerView.Adapter<CategoryBookAdapte
         holder.mButtonShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-//                shareIntent.setType("image/jpg");
-//                Uri uri = Uri.parse(path);
-//                shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
-//                mContext.startActivity(Intent.createChooser(shareIntent, "Share image using"));
-                //mContext.startActivity(new Intent(mContext, BookKindListActivity.class));
-                mContext.startActivity(new Intent(mContext, BookDiscountActivity.class));
+                Intent intent = new Intent(mContext, BookDiscountActivity.class);
+                intent.putExtra("category", categories[position]);
+                mContext.startActivity(intent);
             }
         });
 

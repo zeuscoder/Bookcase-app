@@ -15,8 +15,7 @@
 
         <ImageView
             android:id="@+id/favorite_book_image"
-            android:src="@mipmap/user__profile_photo"
-            android:background="#ffffff"
+            android:background="#ccc"
             android:layout_width="100dp"
             android:layout_height="150dp" />
 
@@ -34,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="#333333"
-                android:maxLines="2"
+                android:maxLines="1"
                 android:ellipsize="end"
                 android:text="小王子"/>
 
@@ -57,7 +56,7 @@
                 android:layout_weight="1"
                 android:textSize="12sp"
                 android:textColor="#666"
-                android:maxLines="4"
+                android:maxLines="3"
                 android:ellipsize="end"
                 android:text="长度：其他 颜色分类：玫瑰金"/>
 

@@ -159,17 +159,21 @@ public class BookIntroductionActivity extends BaseActivity implements View.OnCli
     private void updateToHeaderView(Book book) {
         title.setText(book.getTitle());
         author.setText(book.getAuthors());
-        price.setText("￥" + book.getPages());
+        price.setText("￥" + book.getPrice());
         content.setText("        " + book.getSummary());
         ImageLoader.getInstance().displayImage(book.getImage(), picture);
     }
 
-    private void updateToListView(List<Annotations> data) {
+    private void updateToListView(final List<Annotations> data) {
         comments.setAdapter(new BookIntroductionCommentAdapter(data, this));
         comments.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(BookIntroductionActivity.this, BookArticleActivity.class));
+                Intent intent = new Intent(BookIntroductionActivity.this, BookArticleActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("annotations", data.get(i-1));
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }

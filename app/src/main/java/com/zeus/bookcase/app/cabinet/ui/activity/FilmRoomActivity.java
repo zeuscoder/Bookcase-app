@@ -32,10 +32,11 @@ public class FilmRoomActivity extends BaseActivity {
     private float item_max_font_size;
     private float font_size_d;
 
-    private List<Integer> walls = Arrays.asList(R.mipmap.wall01,
-            R.mipmap.wall02, R.mipmap.wall03, R.mipmap.wall04, R.mipmap.wall05,
-            R.mipmap.wall06, R.mipmap.wall07, R.mipmap.wall08, R.mipmap.wall09,
-            R.mipmap.wall10);
+//    private List<Integer> walls = Arrays.asList(R.mipmap.wall01,
+//            R.mipmap.wall02, R.mipmap.wall03, R.mipmap.wall04, R.mipmap.wall05,
+//            R.mipmap.wall06, R.mipmap.wall07, R.mipmap.wall08, R.mipmap.wall09,
+//            R.mipmap.wall10);
+    private List<Integer> walls = Arrays.asList(R.mipmap.wall01);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

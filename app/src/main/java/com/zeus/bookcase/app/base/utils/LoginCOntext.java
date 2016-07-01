@@ -3,20 +3,20 @@ package com.zeus.bookcase.app.base.utils;
 import android.content.Context;
 
 /**
- * Created by zeus_coder on 2016/3/20
+ * Created by zeus_coder on 2015/12/20
  * LoginContext，用户接口和状态管理类.
  */
-public class LoginContext {
+public class LoginCOntext {
 
     //用户状态，默认为未登录状态
     UserState state = new LogOutState();
     //单例
-    static LoginContext loginContext = new LoginContext();
+    static LoginCOntext loginContext = new LoginCOntext();
 
-    private LoginContext(){
+    private LoginCOntext(){
     }
 
-    public static LoginContext getLoginContext() {
+    public static LoginCOntext getLoginContext() {
         return loginContext;
     }
 

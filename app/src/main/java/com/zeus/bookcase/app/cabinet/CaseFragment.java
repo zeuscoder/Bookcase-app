@@ -11,11 +11,9 @@ import android.widget.LinearLayout;
 
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.cabinet.ui.activity.AddBookActivity;
-import com.zeus.bookcase.app.cabinet.ui.activity.BookLibraryActivity;
-import com.zeus.bookcase.app.cabinet.ui.activity.CaptureActivity;
-import com.zeus.bookcase.app.cabinet.ui.activity.FilmRoomActivity;
 import com.zeus.bookcase.app.cabinet.ui.activity.MusicCardActivity;
 import com.zeus.bookcase.app.cabinet.ui.activity.MyBookActivity;
+import com.zeus.bookcase.app.cabinet.ui.activity.NewTransactionActivity;
 
 /**
  * Created by zeus_coder on 2016/2/3.
@@ -23,7 +21,7 @@ import com.zeus.bookcase.app.cabinet.ui.activity.MyBookActivity;
 public class CaseFragment extends Fragment {
 
     private LinearLayout bookStore;
-    private LinearLayout musicStore;
+    private LinearLayout addBook;
     private LinearLayout filmStore;
 
     @Nullable
@@ -36,7 +34,7 @@ public class CaseFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bookStore = (LinearLayout) view.findViewById(R.id.book_store);
-        musicStore = (LinearLayout) view.findViewById(R.id.music_store);
+        addBook = (LinearLayout) view.findViewById(R.id.add_book);
         filmStore = (LinearLayout) view.findViewById(R.id.film_store);
         bookStore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +46,7 @@ public class CaseFragment extends Fragment {
                 startActivity(new Intent(getActivity(), MyBookActivity.class));
             }
         });
-        musicStore.setOnClickListener(new View.OnClickListener() {
+        addBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                startActivity(new Intent(getActivity(), MusicCardActivity.class));
@@ -59,7 +57,9 @@ public class CaseFragment extends Fragment {
         filmStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), FilmRoomActivity.class));
+//                startActivity(new Intent(getActivity(), FilmRoomActivity.class));
+//                startActivity(new Intent(getActivity(), MusicCardActivity.class));
+                startActivity(new Intent(getActivity(), NewTransactionActivity.class));
             }
         });
     }

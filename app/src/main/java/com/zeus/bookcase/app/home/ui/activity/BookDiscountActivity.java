@@ -1,5 +1,6 @@
 package com.zeus.bookcase.app.home.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,14 +8,24 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.loopj.android.http.RequestParams;
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.base.BaseActivity;
 import com.zeus.bookcase.app.home.adapter.BookDiscountAdapter;
+import com.zeus.bookcase.app.home.api.BaseAsyncHttp;
+import com.zeus.bookcase.app.home.api.HttpResponseHandler;
 import com.zeus.bookcase.app.home.data.BookDiscountSampleData;
+import com.zeus.bookcase.app.home.model.book.Book;
 import com.zeus.common.view.StaggeredGridView;
 
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by zeus_coder on 2015/12/1.
@@ -30,12 +41,20 @@ public class BookDiscountActivity extends BaseActivity implements AbsListView.On
 
     private ArrayList<String> mData;
 
+    private List<Book> books;
+    private String category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home__activity_book_discount);
         initTopButton(R.string.activity_discount, R.mipmap.app__top_bar_arrow_back, 0);
 
+        initViews();
+        initData(savedInstanceState);
+    }
+
+    private void initViews() {
         mBookGridView = (StaggeredGridView) findViewById(R.id.stagger_grid_view);
 /*        LayoutInflater layoutInflater = getLayoutInflater();
         View header = layoutInflater.inflate(R.layout.list_item_header_footer, null);
@@ -46,7 +65,43 @@ public class BookDiscountActivity extends BaseActivity implements AbsListView.On
         txtFooterTitle.setText("THE FOOTER!");
         mGridView.addHeaderView(header);
         mGridView.addFooterView(footer);*/
-        mAdapter = new BookDiscountAdapter(this);
+
+    }
+
+    private void initData(Bundle savedInstanceState) {
+        if (getIntent().hasExtra("category")) {
+            category = getIntent().getStringExtra("category");
+            books = new ArrayList<Book>();
+            getRequestData(category, savedInstanceState);
+        }
+
+    }
+
+    /*加载查询数据 */
+    public void getRequestData(String str, final Bundle savedInstanceState){
+        RequestParams params=new RequestParams();
+        params.put("q", str.trim());
+        BaseAsyncHttp.getReq("/v2/book/search", params, new HttpResponseHandler() {
+
+            @Override
+            public void jsonSuccess(JSONObject resp) {
+                books.clear();
+                JSONArray jsonbooks = resp.optJSONArray("books");
+                Gson gson = new Gson();
+                books = gson.fromJson(String.valueOf(jsonbooks), new TypeToken<List<Book>>() {
+                }.getType());
+                updateToView(savedInstanceState);
+            }
+
+            @Override
+            public void jsonFail(JSONObject resp) {
+                Toast.makeText(BookDiscountActivity.this, "网络出错", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateToView(Bundle savedInstanceState) {
+        mAdapter = new BookDiscountAdapter(this, books);
 
         // do we have saved data?
         if (savedInstanceState != null) {
@@ -71,12 +126,13 @@ public class BookDiscountActivity extends BaseActivity implements AbsListView.On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, "Item Clicked: " + position, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(BookDiscountActivity.this, BookIntroductionActivity.class);
+        intent.putExtra("bookId", books.get(position).getId());
+        startActivity(intent);
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, "Item Long Clicked: " + position, Toast.LENGTH_SHORT).show();
         return true;
     }
 
@@ -87,18 +143,18 @@ public class BookDiscountActivity extends BaseActivity implements AbsListView.On
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-        Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
-                " visibleItemCount:" + visibleItemCount +
-                " totalItemCount:" + totalItemCount);
-        // our handling
-        if (!mHasRequestedMore) {
-            int lastInScreen = firstVisibleItem + visibleItemCount;
-            if (lastInScreen >= totalItemCount) {
-                Log.d(TAG, "onScroll lastInScreen - so load more");
-                mHasRequestedMore = true;
-                onLoadMoreItems();
-            }
-        }
+//        Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
+//                " visibleItemCount:" + visibleItemCount +
+//                " totalItemCount:" + totalItemCount);
+//        // our handling
+//        if (!mHasRequestedMore) {
+//            int lastInScreen = firstVisibleItem + visibleItemCount;
+//            if (lastInScreen >= totalItemCount) {
+//                Log.d(TAG, "onScroll lastInScreen - so load more");
+//                mHasRequestedMore = true;
+//                onLoadMoreItems();
+//            }
+//        }
     }
 
     private void onLoadMoreItems() {

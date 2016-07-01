@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zeus.bookcase.app.R;
 import com.zeus.bookcase.app.base.BaseActivity;
+import com.zeus.bookcase.app.home.model.Cart;
 import com.zeus.bookcase.app.home.model.Order;
 import com.zeus.bookcase.app.home.model.book.Book;
 import com.zeus.bookcase.app.home.model.dao.OrderDao;
@@ -22,6 +23,7 @@ import com.zeus.bookcase.app.user.model.dao.AddressDao;
 import com.zeus.bookcase.app.user.ui.activity.AddAddressActivity;
 
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Created by zeus_coder on 2016/2/17.
@@ -49,6 +51,7 @@ public class BookOrderConfirmActivity extends BaseActivity implements View.OnCli
     private double price;
     private double prices;
 
+    private Cart cart;
     private Book book;
     private User user;
 
@@ -89,7 +92,6 @@ public class BookOrderConfirmActivity extends BaseActivity implements View.OnCli
         minus.setOnClickListener(this);
         plus.setOnClickListener(this);
         purchase.setOnClickListener(this);
-
     }
 
     private void initData() {
@@ -107,21 +109,29 @@ public class BookOrderConfirmActivity extends BaseActivity implements View.OnCli
         }
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            book = (Book) bundle.getSerializable("book");
-            ImageLoader.getInstance().displayImage(book.getImage(), bookImage);
-            bookName.setText(book.getTitle());
+            if (bundle.getSerializable("book") != null) {
+                book = (Book) bundle.getSerializable("book");
+                ImageLoader.getInstance().displayImage(book.getImage(), bookImage);
+                bookName.setText(book.getTitle());
+                ssb = new SpannableStringBuilder(book.getPrice());
+                ssb.setSpan(new StrikethroughSpan(), 0, book.getPrice().length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+            } else if (bundle.getSerializable("cart") != null) {
+                cart = (Cart) bundle.getSerializable("cart");
+                ImageLoader.getInstance().displayImage(cart.getImage(), bookImage);
+                bookName.setText(cart.getTitle());
+                ssb = new SpannableStringBuilder(cart.getPrice());
+                ssb.setSpan(new StrikethroughSpan(), 0, cart.getPrice().length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+            }
             bookNumber.setText(String.valueOf(1));
             bookNewPrice.setText(String.valueOf("10.00元"));
             count = Integer.parseInt(bookNumber.getText().toString());
             price = 10.00;
             prices = count * price;
             allPrices.setText("￥" + String.valueOf(prices));
-            ssb = new SpannableStringBuilder(book.getPrice());
-            ssb.setSpan(new StrikethroughSpan(), 0, book.getPrice().length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
             bookOldPrice.setText(ssb);
         } else {
             BookOrderConfirmActivity.this.finish();
-            Toast.makeText(BookOrderConfirmActivity.this, "查无此书", Toast.LENGTH_SHORT).show();
+            Toast.makeText(BookOrderConfirmActivity.this, "暂时缺货", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -155,7 +165,7 @@ public class BookOrderConfirmActivity extends BaseActivity implements View.OnCli
             count -= 1;
             prices = price * count;
             bookNumber.setText(String.valueOf(count));
-            allPrices.setText(String.valueOf(prices));
+            allPrices.setText("￥" + String.valueOf(prices));
         }
     }
 
@@ -164,7 +174,7 @@ public class BookOrderConfirmActivity extends BaseActivity implements View.OnCli
             count += 1;
             prices = price * count;
             bookNumber.setText(String.valueOf(count));
-            allPrices.setText(String.valueOf(prices));
+            allPrices.setText("￥" + String.valueOf(prices));
         }
     }
 
@@ -177,10 +187,22 @@ public class BookOrderConfirmActivity extends BaseActivity implements View.OnCli
         order.setMessage(bookMessage.getText().toString());
         order.setState("待发货");
         //有问题，跳转出错！
-        if (orderDao.insertOrder(order)) {
+/*        if (!orderDao.insertOrder(order)) {
             startActivityForResult(new Intent(BookOrderConfirmActivity.this, OrderPayResultActivity.class), 0);
         } else {
 
-        }
+        }*/
+        order.save(this, new SaveListener() {
+            @Override
+            public void onSuccess() {
+                startActivityForResult(new Intent(BookOrderConfirmActivity.this, OrderPayResultActivity.class), 0);
+                Toast.makeText(BookOrderConfirmActivity.this, "已提交订单", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+                Toast.makeText(BookOrderConfirmActivity.this, s.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
