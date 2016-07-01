@@ -10,7 +10,7 @@ import cn.bmob.v3.BmobObject;
 public class Transaction extends BmobObject implements Serializable {
 
     //书籍id
-    private String id;
+    private String bid;
     //拥有者id
     private String uid;
     //交换者id
@@ -22,12 +22,24 @@ public class Transaction extends BmobObject implements Serializable {
     //是否已交易
     private Boolean hasdeal;
 
-    public String getId() {
-        return id;
+    private String owner;
+
+    private String image;
+
+    private String title;
+
+    private String author;
+
+    private String state;
+
+    private String like;
+
+    public String getBid() {
+        return bid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setBid(String bid) {
+        this.bid = bid;
     }
 
     public String getUid() {
@@ -68,5 +80,53 @@ public class Transaction extends BmobObject implements Serializable {
 
     public void setHasdeal(Boolean hasdeal) {
         this.hasdeal = hasdeal;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getLike() {
+        return like;
+    }
+
+    public void setLike(String like) {
+        this.like = like;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }
